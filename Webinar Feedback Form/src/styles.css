@@ -38,21 +38,30 @@ html {
     align-items: center;
 }
 
-.page-container {
+.page-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
     border: 5px solid black;
-    max-width: 450px;
+    max-width: 400px;
     padding: 20px;
     gap: 1rem;
+    display: none;
+}
+
+.page-container.active{
+    display: block;
+}
+.label {
+    font-size: 12px; /* Change this value to your desired font size */
+    margin-bottom: 3px;
 }
 
 input[type="text"],
 input[type="date"],
 input[type="textfield"] {
-    width: 450px;
+    width: 400px;
     height: 2.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
