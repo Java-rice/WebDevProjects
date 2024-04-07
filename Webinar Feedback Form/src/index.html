@@ -12,7 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class="main-container">
+      <div class="container">
         <div class="head-container">
             <div class="step-label">
                 <svg width="30" height="30">
@@ -38,8 +39,8 @@
                 <p>Comments</p>
             </div>
         </div>
-        <form action="#">
-            <div class="page-container">
+        <form data-multi-step action="#">
+            <div data-step="1" class="page-container active" >
                 <div class="field">
                     <div class="label">Name</div>
                     <input type="text" placeholder="What do you prefer to be called?">
@@ -54,7 +55,7 @@
                 </div>
                 <button>CONTINUE</button>
             </div>
-            <div class="page-container">
+            <div data-step="2" class="page-container">
                 <div class="field">
                     <div class="label">Name of Webinar</div>
                     <input type="text">
@@ -124,7 +125,7 @@
                 <button>CONTINUE</button>
 
             </div>
-            <div class="page-container">
+            <div data-step="3" class="page-container">
                 <div class="field">
                     <div class="label">Please rate the webinar according to your satisfaction level.</div>
                     <table>
@@ -174,10 +175,12 @@
                 <input type="submit">
             </div>
         </form>
-        <div>
+        <div data-step="4" class="page-container">
             <h2>Thank you for participating!</h2>
             <button>SUBMIT ANOTHER</button>
         </div>
     </div>
+    </div>
+      
 </body>
 </html>
