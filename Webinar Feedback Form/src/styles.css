@@ -36,6 +36,8 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 90vh;
+    
 }
 
 .page-container{
@@ -52,6 +54,7 @@ html {
 
 .page-container.active{
     display: block;
+
 }
 .label {
     font-size: 12px; /* Change this value to your desired font size */
@@ -67,4 +70,5 @@ input[type="textfield"] {
     border-radius: 4px;
     padding: 0 0.5rem;
     box-sizing: border-box;
+    margin-bottom: 20px;
 }
