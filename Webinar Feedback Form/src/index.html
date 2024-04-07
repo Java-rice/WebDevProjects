@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Feedback Form</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+    <script src='main.js'></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="head-container">
+            <div class="step-label">
+                <svg width="30" height="30">
+                    <circle cx="15" cy="15" r="10" stroke="black" stroke-width="2" fill="white" />
+                    <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">1</text>
+                </svg>
+                <p>Contacts</p>
+            </div>
+            <img class= "arrow" src="../assets/arrow.png">
+            <div class="step-label">
+                <svg width="30" height="30">
+                    <circle cx="15" cy="15" r="10" stroke="black" stroke-width="2" fill="white" />
+                    <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">2</text>
+                </svg>
+                <p>Evaluation</p>
+            </div>
+            <img class= "arrow" src="../assets/arrow.png">
+            <div class="step-label">
+                <svg width="30" height="30">
+                    <circle cx="15" cy="15" r="10" stroke="black" stroke-width="2" fill="white" />
+                    <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">3</text>
+                </svg>
+                <p>Comments</p>
+            </div>
+        </div>
+        <form action="#">
+            <div class="page-container">
+                <div class="field">
+                    <div class="label">Name</div>
+                    <input type="text" placeholder="What do you prefer to be called?">
+                </div>
+                <div class="field">
+                    <div class="label">Mobile Number</div>
+                    <input type="text" placeholder="Enter your mobile number">
+                </div>
+                <div class="field">
+                    <div class="label">E-mail</div>
+                    <input type="text" placeholder="Enter your e-mail">
+                </div>
+                <button>CONTINUE</button>
+            </div>
+            <div class="page-container">
+                <div class="field">
+                    <div class="label">Name of Webinar</div>
+                    <input type="text">
+                </div>
+                <div class="field">
+                    <div class="label">Date of Webinar</div>
+                    <input type="date">
+                </div>
+                <div class="field">
+                    <div class="label">Please rate the webinar according to your satisfaction level.</div>
+                    <table>
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th>Very Poor</th>
+                            <th>Poor</th>
+                            <th>Neutral</th>
+                            <th>Good</th>
+                            <th>Great</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="radio-field">
+                            <td>Information Delivery</td>
+                            <td><input type="radio" name="information_delivery" value="very_poor"></td>
+                            <td><input type="radio" name="information_delivery" value="poor"></td>
+                            <td><input type="radio" name="information_delivery" value="neutral"></td>
+                            <td><input type="radio" name="information_delivery" value="good"></td>
+                            <td><input type="radio" name="information_delivery" value="great"></td>
+                          </tr>
+                          <tr class="radio-field">
+                            <td>Subject Presentation</td>
+                            <td><input type="radio" name="subject_presentation" value="very_poor"></td>
+                            <td><input type="radio" name="subject_presentation" value="poor"></td>
+                            <td><input type="radio" name="subject_presentation" value="neutral"></td>
+                            <td><input type="radio" name="subject_presentation" value="good"></td>
+                            <td><input type="radio" name="subject_presentation" value="great"></td>
+                          </tr>
+                          <tr class="radio-field">
+                            <td>The pace of the webinar</td>
+                            <td><input type="radio" name="webinar_pace" value="very_poor"></td>
+                            <td><input type="radio" name="webinar_pace" value="poor"></td>
+                            <td><input type="radio" name="webinar_pace" value="neutral"></td>
+                            <td><input type="radio" name="webinar_pace" value="good"></td>
+                            <td><input type="radio" name="webinar_pace" value="great"></td>
+                          </tr>
+                          <tr class="radio-field">
+                            <td>The duration of the webinar</td>
+                            <td><input type="radio" name="webinar_duration" value="very_poor"></td>
+                            <td><input type="radio" name="webinar_duration" value="poor"></td>
+                            <td><input type="radio" name="webinar_duration" value="neutral"></td>
+                            <td><input type="radio" name="webinar_duration" value="good"></td>
+                            <td><input type="radio" name="webinar_duration" value="great"></td>
+                          </tr>
+                          <tr class="radio-field">
+                            <td>Trainer's knowledge</td>
+                            <td><input type="radio" name="trainer_knowledge" value="very_poor"></td>
+                            <td><input type="radio" name="trainer_knowledge" value="poor"></td>
+                            <td><input type="radio" name="trainer_knowledge" value="neutral"></td>
+                            <td><input type="radio" name="trainer_knowledge" value="good"></td>
+                            <td><input type="radio" name="trainer_knowledge" value="great"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <button>BACK</button>
+                <button>CONTINUE</button>
+
+            </div>
+            <div class="page-container">
+                <div class="field">
+                    <div class="label">Please rate the webinar according to your satisfaction level.</div>
+                    <table>
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th>Yes</th>
+                            <th>Not Sure</th>
+                            <th>No</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="radio-field">
+                            <td>Did you gain new knowledge participating the webinar</td>
+                            <td><input type="radio" name="information_delivery" value="yes"></td>
+                            <td><input type="radio" name="information_delivery" value="not_sure"></td>
+                            <td><input type="radio" name="information_delivery" value="no"></td>
+                          </tr>
+                          <tr class="radio-field">
+                            <td>Do you think you can apply what you learned in this webinar?</td>
+                            <td><input type="radio" name="information_delivery" value="yes"></td>
+                            <td><input type="radio" name="information_delivery" value="not_sure"></td>
+                            <td><input type="radio" name="information_delivery" value="no"></td>
+                          </tr>
+                          <tr class="radio-field">
+                            <td>Do you regularly attend webinars?</td>
+                            <td><input type="radio" name="information_delivery" value="yes"></td>
+                            <td><input type="radio" name="information_delivery" value="not_sure"></td>
+                            <td><input type="radio" name="information_delivery" value="no"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <div class="field">
+                    <div class="label">What was the best thing about this webinar?</div>
+                    <input type="textfield" placeholder="Type here ...">
+                </div>
+                <div class="field">
+                    <div class="label">What was the worst thing about this webinar?</div>
+                    <input type="textfield" placeholder="Type here ...">
+                </div>
+                <div class="field">
+                    <div class="label">Any suggestions.</div>
+                    <input type="textfield" placeholder="Type here ...">
+                </div>
+                <button>BACK</button>
+                <input type="submit">
+            </div>
+        </form>
+        <div>
+            <h2>Thank you for participating!</h2>
+            <button>SUBMIT ANOTHER</button>
+        </div>
+    </div>
+</body>
+</html>

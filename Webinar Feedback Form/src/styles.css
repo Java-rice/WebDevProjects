@@ -1,0 +1,33 @@
+:root {
+    --red: #A00F0F;
+    --green: #1D8841;
+}
+
+html {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.head-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.arrow{
+    width: 20px;
+    height: 20px;
+}
+
+.step-label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.label{
+    font-size: 16px;
+    font-weight: bold;
+}
+
