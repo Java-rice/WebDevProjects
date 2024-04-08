@@ -1,5 +1,43 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.querySelector('form[data-multi-step]');
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        if (validateForm()) {
+            this.submit();
+        }
+    });
+});
+
+const multiStepForm = document.querySelector('[data-multi-step]');
+const formSteps = [...multiStepForm.querySelectorAll('[data-step]')];
+let currentStep = formSteps.findIndex(step => step.classList.contains('active'));
+
+if (currentStep < 0) {
+    currentStep = 0;
+    showCurrentDataStep();
+}
+
+multiStepForm.addEventListener('click', e => {
+    if (e.target.matches('[data-next]')) {
+        e.preventDefault();
+        // Check if the current step is the first step
+        if (currentStep === 0) {
+            if (!validateForm()) {
+                return; // Stop further execution if validation fails
+            }
+        }
+        currentStep += 1;
+    } else if (e.target.matches('[data-previous]')) {
+        e.preventDefault();
+        currentStep -= 1;
+    }
+    showCurrentDataStep();
+});
+
+
 function validateForm() {
-    // Get the values of the input fields
+    // Get the values of the input fields for the first step
     var name = document.querySelector('.page-container.active input[name="name"]').value.trim();
     var mobileNumber = document.querySelector('.page-container.active input[name="mobile_number"]').value.trim();
     var email = document.querySelector('.page-container.active input[name="email"]').value.trim();
@@ -23,37 +61,7 @@ function validateForm() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    var form = document.querySelector('form[data-multi-step]');
-    
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        if (validateForm()) {
-            this.submit();
-        }
-    });
-});
-const multiStepForm = document.querySelector('[data-multi-step]');
-const formSteps = [...multiStepForm.querySelectorAll('[data-step]')];
-let currentStep = formSteps.findIndex(step => step.classList.contains('active'));
-
-if (currentStep < 0) {
-    currentStep = 0;
-    showCurrentStep();
-}
-
-multiStepForm.addEventListener('click', e => {
-    if (e.target.matches('[data-next]')) {
-        e.preventDefault();
-        currentStep += 1;
-    } else if (e.target.matches('[data-previous]')) {
-        e.preventDefault();
-        currentStep -= 1;
-    }
-    showCurrentStep();
-});
-
-function showCurrentStep() {
+function showCurrentDataStep() {
     formSteps.forEach((step, index) => {
         step.classList.toggle('active', index === currentStep);
     });
