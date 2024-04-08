@@ -58,17 +58,23 @@ button{
     fill: #E1E1E6;
 }
 
-.text-active .text-style{
-    fill: #F9F0F0;
-    font-size: 10px; /* Adjust the font size as needed */
+.text-active {
+    fill: #FFFFFF; /* White color for active text */
+    font-size: 10px;
     font-family: "sans-serif";
     font-weight: 600;
-    
 }
 
-.text-inactive .text-style{
-    fill: #8D8D99;
-    font-size: 12px; /* Adjust the font size as needed */
+.text-inactive {
+    fill: #000000; /* Black color for inactive text */
+    font-size: 12px;
+}
+
+.text-visited {
+    fill: #FFFFFF; /* White color for active text */
+    font-size: 10px;
+    font-family: "sans-serif";
+    font-weight: 600;
 }
 
 .circle-visited .circle-style {
@@ -112,7 +118,7 @@ button[data-next] {
     background-color: #A00F0F; /* Blue */
     color: white; /* Text color */
     border: none;
-    padding: 10px 20px;
+    padding: 13px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -155,7 +161,11 @@ button[data-previous] {
     align-items: start;
     /* border: 5px solid black; */
     max-width: 400px;
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+
     gap: 1rem;
     display: none;
 }

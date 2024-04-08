@@ -67,24 +67,27 @@ function showCurrentDataStep() {
 
         let svgElement = document.querySelector(`#circle-${index}`);
         if (svgElement) {
-            let textElement = svgElement.querySelector('.text-style'); // Targeting the text element
-            // Adjusting classes for visited, active, and inactive statuses
+            let textElement = svgElement.querySelector('text');
             if (index < currentStep) {
                 svgElement.classList.replace('circle-active', 'circle-visited');
                 textElement.classList.replace('text-active', 'text-visited');
+                textElement.classList.add('text-inactive');
             } else if (index === currentStep) {
                 svgElement.classList.replace('circle-visited', 'circle-active');
                 svgElement.classList.replace('circle-inactive', 'circle-active');
                 textElement.classList.replace('text-visited', 'text-active');
                 textElement.classList.replace('text-inactive', 'text-active');
+                textElement.classList.add('text-active');
+
+             
             } else {
                 svgElement.classList.replace('circle-active', 'circle-inactive');
                 textElement.classList.replace('text-active', 'text-inactive');
                 textElement.classList.replace('text-visited', 'text-inactive');
+                textElement.classList.add('text-inactive');
             }
         }
     });
 }
-
 
 
