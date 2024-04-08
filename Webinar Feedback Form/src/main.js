@@ -65,25 +65,29 @@ function showCurrentDataStep() {
     formSteps.forEach((step, index) => {
         step.classList.toggle('active', index === currentStep);
 
-        // Find the SVG element for this step
         let svgElement = document.querySelector(`#circle-${index}`);
         if (svgElement) {
-            // Update the SVG element to inactive
-            svgElement.classList.remove('circle-active');
-            svgElement.classList.add('circle-inactive');
-            // Also update the text to inactive
-            svgElement.classList.remove('text-active');
-            svgElement.classList.add('text-inactive');
+            let textElement = svgElement.querySelector('text');
+            if (index < currentStep) {
+                svgElement.classList.replace('circle-active', 'circle-visited');
+                textElement.classList.replace('text-active', 'text-visited');
+                textElement.classList.add('text-inactive');
+            } else if (index === currentStep) {
+                svgElement.classList.replace('circle-visited', 'circle-active');
+                svgElement.classList.replace('circle-inactive', 'circle-active');
+                textElement.classList.replace('text-visited', 'text-active');
+                textElement.classList.replace('text-inactive', 'text-active');
+                textElement.classList.add('text-active');
+
+             
+            } else {
+                svgElement.classList.replace('circle-active', 'circle-inactive');
+                textElement.classList.replace('text-active', 'text-inactive');
+                textElement.classList.replace('text-visited', 'text-inactive');
+                textElement.classList.add('text-inactive');
+            }
         }
     });
-    // Now, mark the current step's SVG element as active
-    let activeSvgElement = document.querySelector(`#circle-${currentStep}`);
-    if (activeSvgElement) {
-        activeSvgElement.classList.remove('circle-inactive');
-        activeSvgElement.classList.add('circle-active');
-        // Also update the text to active
-        activeSvgElement.classList.remove('text-inactive');
-        activeSvgElement.classList.add('text-active');
-    }
 }
+
 

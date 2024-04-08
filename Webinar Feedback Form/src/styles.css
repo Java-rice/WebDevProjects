@@ -23,13 +23,51 @@ button{
     
 }
 
+th{
+    font-family: "IBM Plex Sans";
+    font-size: 10px;
+}
+
 .continue-btn{
     width: 100%;
     text-align: end;
 }
 
 
-
+.field {
+    font-size: 14px; /* Set the font size for the entire field */
+  }
+  
+  .label {
+    margin-bottom: 10px;
+    font-size: 12px; /* Set the font size for the labels */
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .radio-field {
+    font-size: 12px; /* Set the font size for the radio button labels */
+    border: solid black 2px;
+  }
+  
+  .radio-field input[type="radio"] {
+    margin-right: 5px; /* Adjust the spacing between radio buttons and labels */
+    vertical-align: middle;
+  }
+  
+  /* Optional: Add additional styling for the selected radio buttons */
+  .radio-field input[type="radio"]:checked + label {
+    font-weight: bold;
+  }
 
 .head-container{
     display: flex;
@@ -57,18 +95,36 @@ button{
     fill: #E1E1E6;
 }
 
-.text-active .text-style{
-    fill: #F9F0F0;
-    font-size: 10px; /* Adjust the font size as needed */
+.text-active {
+    fill: #FFFFFF; /* White color for active text */
+    font-size: 10px;
     font-family: "sans-serif";
     font-weight: 600;
-    
 }
 
-.text-inactive .text-style{
-    fill: #8D8D99;
-    font-size: 12px; /* Adjust the font size as needed */
+.text-inactive {
+    fill: #000000; /* Black color for inactive text */
+    font-size: 12px;
 }
+
+.text-visited {
+    fill: #FFFFFF; /* White color for active text */
+    font-size: 10px;
+    font-family: "sans-serif";
+    font-weight: 600;
+}
+
+.circle-visited .circle-style {
+    stroke: green;
+    stroke-width: 2;
+    fill: green;
+}
+
+.text-visited .text-style {
+    fill: #F9F0F0; /* Change to the desired visited text color */
+    font-size: 15px; /* Adjust the font size as needed */
+}
+
   
 .arrow{
     width: 8px;
@@ -99,13 +155,27 @@ button[data-next] {
     background-color: #A00F0F; /* Blue */
     color: white; /* Text color */
     border: none;
+    padding: 13px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+button[data-next]:hover {
+    background-color: #840E0E; /* Darker shade of blue for hover effect */
+}
+
+button[data-previous] {
+    background-color: #FFFFFF; /* Blue */
+    color: #840E0E; /* Text color */
+    border: 2px solid #840E0E;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
   
-  button[data-next]:hover {
-    background-color: #840E0E; /* Darker shade of blue for hover effect */
+  button[data-previous]:hover {
+    color: white;
+    background-color: #A00F0F; /* Darker shade of blue for hover effect */
 }
 
 .container{
@@ -128,7 +198,11 @@ button[data-next] {
     align-items: start;
     /* border: 5px solid black; */
     max-width: 400px;
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    height: auto;
     gap: 1rem;
     display: none;
 }
@@ -158,4 +232,17 @@ input[type="textfield"] {
 
 input[type="text"]::placeholder{
    color: #bdbdbd;
+}
+
+input[type="submit"] {
+    background-color: #A00F0F; /* Blue */
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+input[type="submit"]:hover {
+    background-color: #840E0E; /* Darker shade of blue for hover effect */
 }
