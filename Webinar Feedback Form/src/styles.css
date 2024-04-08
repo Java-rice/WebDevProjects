@@ -16,6 +16,22 @@ p{
     margin-left: 2px;
 }
 
+button{
+    font-family: "IBM Plex Sans";
+    font-weight: bolder;
+    font-size: 12px;
+    
+}
+
+.continue-btn{
+    width: 100%;
+    text-align: end;
+}
+
+
+
+
+
 .head-container{
     display: flex;
     flex-direction: row;
