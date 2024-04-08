@@ -53,12 +53,26 @@ html {
     font-weight: bold;
 }
 
+
 .main-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 90vh;
+}
+
+button[data-next] {
+    background-color: #A00F0F; /* Blue */
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+  button[data-next]:hover {
+    background-color: #840E0E; /* Darker shade of blue for hover effect */
 }
 
 .container{
