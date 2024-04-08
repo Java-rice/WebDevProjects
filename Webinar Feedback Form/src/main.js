@@ -1,8 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var continueButton = document.querySelector('.page-container.active button');
-    
-    continueButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        alert('Clicked CONTINUE');
-    });
-});
+
+
+const multiStepForm = document.querySelector('[data-multi-step]');
+const formSteps = multiStepForm.querySelectorAll('[data-step]');
+let currentStep = formSteps.find(step => )
