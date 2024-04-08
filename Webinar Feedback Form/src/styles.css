@@ -23,13 +23,51 @@ button{
     
 }
 
+th{
+    font-family: "IBM Plex Sans";
+    font-size: 10px;
+}
+
 .continue-btn{
     width: 100%;
     text-align: end;
 }
 
 
-
+.field {
+    font-size: 14px; /* Set the font size for the entire field */
+  }
+  
+  .label {
+    margin-bottom: 10px;
+    font-size: 12px; /* Set the font size for the labels */
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .radio-field {
+    font-size: 12px; /* Set the font size for the radio button labels */
+    border: solid black 2px;
+  }
+  
+  .radio-field input[type="radio"] {
+    margin-right: 5px; /* Adjust the spacing between radio buttons and labels */
+    vertical-align: middle;
+  }
+  
+  /* Optional: Add additional styling for the selected radio buttons */
+  .radio-field input[type="radio"]:checked + label {
+    font-weight: bold;
+  }
 
 
 .head-container{
@@ -165,7 +203,7 @@ button[data-previous] {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
-
+    height: auto;
     gap: 1rem;
     display: none;
 }
