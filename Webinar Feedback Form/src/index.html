@@ -60,11 +60,11 @@
             <div class="page-container" data-step>
                 <div class="field">
                     <div class="label">Name of Webinar</div>
-                    <input type="text">
+                    <input type="text" name="webinar_name">
                 </div>
                 <div class="field">
                     <div class="label">Date of Webinar</div>
-                    <input type="date">
+                    <input type="date" name="date_webinar">
                 </div>
                 <div class="field">
                     <div class="label">Please rate the webinar according to your satisfaction level.</div>
@@ -135,52 +135,52 @@
                           <tr>
                             <th></th>
                             <th>Yes</th>
-                            <th>Not Sure</th>
                             <th>No</th>
+                            <th>Not Sure</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr class="radio-field">
                             <td>Did you gain new knowledge participating the webinar</td>
-                            <td><input type="radio" name="information_delivery" value="yes"></td>
-                            <td><input type="radio" name="information_delivery" value="not_sure"></td>
-                            <td><input type="radio" name="information_delivery" value="no"></td>
+                            <td><input type="radio" name="new_knowledge" value="yes"></td>
+                            <td><input type="radio" name="new_knowledge" value="no"></td>
+                            <td><input type="radio" name="new_knowledge" value="not_sure"></td>
                           </tr>
                           <tr class="radio-field">
                             <td>Do you think you can apply what you learned in this webinar?</td>
-                            <td><input type="radio" name="information_delivery" value="yes"></td>
-                            <td><input type="radio" name="information_delivery" value="not_sure"></td>
-                            <td><input type="radio" name="information_delivery" value="no"></td>
+                            <td><input type="radio" name="apply_knowledge" value="yes"></td>
+                            <td><input type="radio" name="apply_knowledge" value="no"></td>
+                            <td><input type="radio" name="apply_knowledge" value="not_sure"></td>
                           </tr>
                           <tr class="radio-field">
                             <td>Do you regularly attend webinars?</td>
-                            <td><input type="radio" name="information_delivery" value="yes"></td>
-                            <td><input type="radio" name="information_delivery" value="not_sure"></td>
-                            <td><input type="radio" name="information_delivery" value="no"></td>
+                            <td><input type="radio" name="attend_webinars" value="yes"></td>
+                            <td><input type="radio" name="attend_webinars" value="no"></td>
+                            <td><input type="radio" name="attend_webinars" value="not_sure"></td>
                           </tr>
                         </tbody>
                       </table>
                 </div>
                 <div class="field">
                     <div class="label">What was the best thing about this webinar?</div>
-                    <input type="textfield" placeholder="Type here ...">
+                    <input type="textfield" name="best_webinar" placeholder="Type here ...">
                 </div>
                 <div class="field">
                     <div class="label">What was the worst thing about this webinar?</div>
-                    <input type="textfield" placeholder="Type here ...">
+                    <input type="textfield" name="worst_webinar"placeholder="Type here ...">
                 </div>
                 <div class="field">
-                    <div class="label">Any suggestions.</div>
-                    <input type="textfield" placeholder="Type here ...">
+                    <div class="label">Any suggestions:</div>
+                    <input type="textfield" name="suggestions_webinar" placeholder="Type here ...">
                 </div>
                 <button data-previous>BACK</button>
                 <input type="submit">
             </div>
+            <div class="page-container" data-step="3">
+              <h2>Thank you for participating!</h2>
+              <button id="submit-another">SUBMIT ANOTHER</button>
+            </div>
         </form>
-        <div class="page-container" data-step>
-            <h2>Thank you for participating!</h2>
-            <button>SUBMIT ANOTHER</button>
-        </div>
     </div>
     </div>
     <script src='main.js'></script>
