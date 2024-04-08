@@ -9,15 +9,71 @@ html {
     font-style: normal;
 }
 
+p{
+    font-family: "IBM Plex Sans";
+    font-weight: bolder;
+    font-size: 13px;
+    margin-left: 2px;
+}
+
+button{
+    font-family: "IBM Plex Sans";
+    font-weight: bolder;
+    font-size: 12px;
+    
+}
+
+.continue-btn{
+    width: 100%;
+    text-align: end;
+}
+
+
+
+
+
 .head-container{
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 24px;
+    border-bottom: 1px solid rgb(226, 226, 226);
+    margin-bottom: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-bottom: 15px;
 }
 
+
+
+.circle-active .circle-style {
+    stroke: #A00F0F;
+    stroke-width: 2;
+    fill: #A00F0F;
+}
+
+.circle-inactive .circle-style {
+    stroke: #E1E1E6;
+    stroke-width: 2;
+    fill: #E1E1E6;
+}
+
+.text-active .text-style{
+    fill: #F9F0F0;
+    font-size: 10px; /* Adjust the font size as needed */
+    font-family: "sans-serif";
+    font-weight: 600;
+    
+}
+
+.text-inactive .text-style{
+    fill: #8D8D99;
+    font-size: 12px; /* Adjust the font size as needed */
+}
+  
 .arrow{
-    width: 20px;
-    height: 20px;
+    width: 8px;
+    height: 13px;
 }
 
 .step-label{
@@ -31,12 +87,26 @@ html {
     font-weight: bold;
 }
 
+
 .main-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 90vh;
+}
+
+button[data-next] {
+    background-color: #A00F0F; /* Blue */
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+  button[data-next]:hover {
+    background-color: #840E0E; /* Darker shade of blue for hover effect */
 }
 
 .container{
@@ -69,7 +139,8 @@ html {
 
 }
 .label {
-    font-size: 12px; /* Change this value to your desired font size */
+    font-size: 13px; /* Change this value to your desired font size */
+    color: rgb(75, 75, 75);
     margin-bottom: 3px;
 }
 
@@ -78,9 +149,14 @@ input[type="date"],
 input[type="textfield"] {
     width: 400px;
     height: 2.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid #e7e7e7;
     border-radius: 4px;
     padding: 0 0.5rem;
     box-sizing: border-box;
     margin-bottom: 20px;
+}
+
+
+input[type="text"]::placeholder{
+   color: #bdbdbd;
 }

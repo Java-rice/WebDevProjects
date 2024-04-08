@@ -15,26 +15,26 @@
       <div class="container">
         <div class="head-container">
             <div class="step-label">
-                <svg width="30" height="30">
-                    <circle cx="15" cy="15" r="10" stroke="black" stroke-width="2" fill="white" />
-                    <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">1</text>
-                </svg>
+              <svg width="30" height="30" id="circle-0" class="step-circle circle-active"> <!-- Initially active -->
+                <circle cx="15" cy="15" r="10" class="circle-style"/>
+                <text x="15" y="19" text-anchor="middle" class="text-style">1</text>
+              </svg>
                 <p>Contacts</p>
             </div>
             <img class= "arrow" src="../assets/arrow.png">
             <div class="step-label">
-                <svg width="30" height="30">
-                    <circle cx="15" cy="15" r="10" stroke="black" stroke-width="2" fill="white" />
-                    <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">2</text>
-                </svg>
+              <svg width="30" height="30" id="circle-1" class="step-circle circle-inactive">
+                <circle cx="15" cy="15" r="10" class="circle-style"/>
+                <text x="15" y="19" text-anchor="middle" class="text-style">2</text>
+              </svg>
                 <p>Evaluation</p>
             </div>
             <img class= "arrow" src="../assets/arrow.png">
             <div class="step-label">
-                <svg width="30" height="30">
-                    <circle cx="15" cy="15" r="10" stroke="black" stroke-width="2" fill="white" />
-                    <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">3</text>
-                </svg>
+              <svg width="30" height="30" id="circle-2" class="step-circle circle-inactive">
+                <circle cx="15" cy="15" r="10" class="circle-style"/>
+                <text x="15" y="19" text-anchor="middle" class="text-style">3</text>
+              </svg>
                 <p>Comments</p>
             </div>
         </div>
@@ -43,17 +43,19 @@
             <div class="page-container" data-step>
                 <div class="field">
                     <div class="label">Name</div>
-                    <input type="text" placeholder="What do you prefer to be called?">
+                    <input type="text" name="name" placeholder="What do you prefer to be called?">
                 </div>
                 <div class="field">
                     <div class="label">Mobile Number</div>
-                    <input type="text" placeholder="Enter your mobile number">
+                    <input type="text" name="mobile_number" placeholder="Enter your mobile number">
                 </div>
                 <div class="field">
                     <div class="label">E-mail</div>
-                    <input type="text" placeholder="Enter your e-mail">
+                    <input type="text" name="email" placeholder="Enter your e-mail">
                 </div>
-                <button data-next>CONTINUE</button>
+                <div class="continue-btn">
+                  <button class="btn1" data-next>CONTINUE</button>
+                </div>
             </div>
             <div class="page-container" data-step>
                 <div class="field">
