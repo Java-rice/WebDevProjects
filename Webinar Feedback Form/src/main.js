@@ -64,5 +64,26 @@ function validateForm() {
 function showCurrentDataStep() {
     formSteps.forEach((step, index) => {
         step.classList.toggle('active', index === currentStep);
+
+        // Find the SVG element for this step
+        let svgElement = document.querySelector(`#circle-${index}`);
+        if (svgElement) {
+            // Update the SVG element to inactive
+            svgElement.classList.remove('circle-active');
+            svgElement.classList.add('circle-inactive');
+            // Also update the text to inactive
+            svgElement.classList.remove('text-active');
+            svgElement.classList.add('text-inactive');
+        }
     });
+    // Now, mark the current step's SVG element as active
+    let activeSvgElement = document.querySelector(`#circle-${currentStep}`);
+    if (activeSvgElement) {
+        activeSvgElement.classList.remove('circle-inactive');
+        activeSvgElement.classList.add('circle-active');
+        // Also update the text to active
+        activeSvgElement.classList.remove('text-inactive');
+        activeSvgElement.classList.add('text-active');
+    }
 }
+

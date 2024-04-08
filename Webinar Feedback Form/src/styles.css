@@ -15,14 +15,25 @@ html {
     align-items: center;
 }
 
-.circle-style {
+.circle-active .circle-style {
+    stroke: #A00F0F;
+    stroke-width: 2;
+    fill: #A00F0F;
+}
+
+.circle-inactive .circle-style {
     stroke: #E1E1E6;
     stroke-width: 2;
     fill: #E1E1E6;
 }
-  
-.text-style {
-    fill: black;
+
+.text-active .text-style{
+    fill: #F9F0F0;
+    font-size: 15px; /* Adjust the font size as needed */
+}
+
+.text-inactive .text-style{
+    fill: #8D8D99;
     font-size: 15px; /* Adjust the font size as needed */
 }
   
