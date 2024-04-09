@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     form.addEventListener('submit', function(event) {
         event.preventDefault();
-        if (validateForm1() || validateForm2()) {
+        if (validateForm1() || validateForm2() || validateForm3()) {
             this.submit();
         }
     });
@@ -28,15 +28,11 @@ if (currentStep < 0) {
 
 multiStepForm.addEventListener('click', e => {
     if (e.target.matches('[data-next]')) {
-        if (currentStep === 0) {
-            if (!validateForm1()) {
-                return;
-            }
+        if (currentStep === 0 && !validateForm1()) {
+            return; 
         }
-        if (currentStep === 1) {
-            if (!validateForm2()) {
-                return;
-            }
+        if (currentStep === 1 && !validateForm2()) {
+            return;
         }
         currentStep += 1;
         showCurrentDataStep();
@@ -48,10 +44,16 @@ multiStepForm.addEventListener('click', e => {
         animateStepTransition();
     } else if (e.target.matches('[type="submit"]')) { 
         e.preventDefault();
-        submitForm();
+        if (currentStep === 2 && !validateForm3()) {
+            return;
+        }
+        currentStep += 1;
+        showCurrentDataStep();
         animateStepTransition();
+        submitForm();
     }
 });
+
 
 
 
@@ -77,18 +79,35 @@ function validateForm1() {
 }
 
 function validateForm2() {
-    
     var webinar_name = document.querySelector('.page-container.active input[name="webinar_name"]').value.trim();
     var date_webinar = document.querySelector('.page-container.active input[name="date_webinar"]').value.trim();
 
-
-    if (webinar_name === '' || date_webinar === ''){
-        return false; 
-    } else {
-        return true; 
+    if (webinar_name === '' || date_webinar === '') {
+        return false;
     }
+
+    var radioGroups = document.querySelectorAll('.page-container.active .radio-field');
+    for (var i = 0; i < radioGroups.length; i++) {
+        var radioButtons = radioGroups[i].querySelectorAll('input[type="radio"]');
+        var isSelected = Array.from(radioButtons).some(radioButton => radioButton.checked);
+        if (!isSelected) {
+            return false;
+        }
+    }
+    return true;
 }
 
+function validateForm3() {
+    var radioGroups = document.querySelectorAll('.page-container.active .radio-field');
+    for (var i = 0; i < radioGroups.length; i++) {
+        var radioButtons = radioGroups[i].querySelectorAll('input[type="radio"]');
+        var isSelected = Array.from(radioButtons).some(radioButton => radioButton.checked);
+        if (!isSelected) {
+            return false;
+        }
+    }
+    return true;
+}
 
 
 function showCurrentDataStep() {
@@ -122,6 +141,7 @@ function showCurrentDataStep() {
 
 
 function submitForm() {
+
     var name = multiStepForm.elements['name'].value;
     var mobileNumber = multiStepForm.elements['mobile_number'].value;
     var email = multiStepForm.elements['email'].value;
