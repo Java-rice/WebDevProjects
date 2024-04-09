@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Feedback Form</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Feedback Form</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="main-container">
@@ -16,113 +16,117 @@
         <div class="head-container">
             <div class="step-label">
               <svg width="30" height="30" id="circle-0" class="step-circle circle-active"> <!-- Initially active -->
-                <circle cx="15" cy="15" r="10" class="circle-style"/>
-                <text x="15" y="20" text-anchor="middle" class="text-style">1</text>
+                <circle cx="15" cy="15" r="10" class="circle-style" color="#909090"/>
+                <text x="15" y="19" text-anchor="middle" class="text-active">1</text>
               </svg>
                 <p>Contacts</p>
             </div>
             <img class= "arrow" src="../assets/arrow.png">
             <div class="step-label">
               <svg width="30" height="30" id="circle-1" class="step-circle circle-inactive">
-                <circle cx="15" cy="15" r="10" class="circle-style"/>
-                <text x="15" y="20" text-anchor="middle" class="text-style">2</text>
+                <circle cx="15" cy="15" r="10" class="circle-style" color="#909090"/>
+                <text x="15" y="19" text-anchor="middle" class="text-active">2</text>
               </svg>
                 <p>Evaluation</p>
             </div>
             <img class= "arrow" src="../assets/arrow.png">
             <div class="step-label">
               <svg width="30" height="30" id="circle-2" class="step-circle circle-inactive">
-                <circle cx="15" cy="15" r="10" class="circle-style"/>
-                <text x="15" y="20" text-anchor="middle" class="text-style">3</text>
+                <circle cx="15" cy="15" r="10" class="circle-style" color="#909090"/>
+                <text x="15" y="19" text-anchor="middle" class="text-active">3</text>
               </svg>
                 <p>Comments</p>
             </div>
         </div>
         <!-- <form data-multi-step action="#"> -->
-          <form data-multi-step>
+          <form data-multi-step action="submit_form.php">
             <div class="page-container" data-step>
                 <div class="field">
-                    <div class="label">Name</div>
-                    <input type="text" name="name" placeholder="What do you prefer to be called?">
+                    <div class="label">Name<span style="color:#A00F0F"> *</span></div>
+                    <input type="text" name="name" placeholder="What do you prefer to be called?" required>
                 </div>
                 <div class="field">
-                    <div class="label">Mobile Number</div>
-                    <input type="text" name="mobile_number" placeholder="Enter your mobile number">
+                    <div class="label">Mobile Number<span style="color:#A00F0F"> *</span></div>
+                    <input type="text" name="mobile_number" placeholder="Enter your mobile number" pattern="\d{11}" required>
                 </div>
                 <div class="field">
-                    <div class="label">E-mail</div>
-                    <input type="text" name="email" placeholder="Enter your e-mail">
+                    <div class="label">E-mail<span style="color:#A00F0F"> *</span></div>
+                    <input type="email" name="email" placeholder="Enter your e-mail" pattern="[^\s@]+@[^\s@]+\.[^\s@]+" required>
                 </div>
-                <button data-next>CONTINUE</button>
+                <div class="continue-btn">
+                  <button class="continue btn1" data-next>CONTINUE</button>
+                </div>
             </div>
             <div class="page-container" data-step>
                 <div class="field">
-                    <div class="label">Name of Webinar</div>
-                    <input type="text">
+                    <div class="label">Name of Webinar<span style="color:#A00F0F"> *</span></div>
+                    <input type="text" name="webinar_name" placeholder="Enter the Webinar name" required>
                 </div>
                 <div class="field">
-                    <div class="label">Date of Webinar</div>
-                    <input type="date">
+                    <label for="date_webinar" class="label">Date of Webinar<span style="color:#A00F0F"> *</span></label>
+                    <input type="date" id="date_webinar" name="date_webinar" value="2024-9-4" required>
                 </div>
                 <div class="field">
-                    <div class="label">Please rate the webinar according to your satisfaction level.</div>
+                    <div class="label">Please rate the webinar according to your satisfaction level.<span style="color:#A00F0F"> *</span></div>
                     <table>
                         <thead>
                           <tr>
-                            <th></th>
-                            <th>Very Poor</th>
-                            <th>Poor</th>
-                            <th>Neutral</th>
-                            <th>Good</th>
-                            <th>Great</th>
+                            <th style="width: 4%;"></th>
+                            <th style="width: 12%; font-size:9px">Very Poor</th>
+                            <th style="width: 12%; font-size:9px">Poor</th>
+                            <th style="width: 12%; font-size:9px">Neutral</th>
+                            <th style="width: 12%; font-size:9px">Good</th>
+                            <th style="width: 12%; font-size:9px">Great</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr class="radio-field">
-                            <td>Information Delivery</td>
-                            <td><input type="radio" name="information_delivery" value="very_poor"></td>
-                            <td><input type="radio" name="information_delivery" value="poor"></td>
-                            <td><input type="radio" name="information_delivery" value="neutral"></td>
-                            <td><input type="radio" name="information_delivery" value="good"></td>
-                            <td><input type="radio" name="information_delivery" value="great"></td>
+                            <td style="width: 45%;">Information Delivery</td>
+                            <td style="width: 12%; text-align:center" ><input type="radio" name="information_delivery" value="very_poor" required></td>
+                            <td style="width: 12%; text-align:center" ><input type="radio" name="information_delivery" value="poor" ></td>
+                            <td style="width: 12%; text-align:center" ><input type="radio" name="information_delivery" value="neutral" ></td>
+                            <td style="width: 12%; text-align:center" ><input type="radio" name="information_delivery" value="good" ></td>
+                            <td style="width: 12%; text-align:center" ><input type="radio" name="information_delivery" value="great" ></td>
                           </tr>
                           <tr class="radio-field">
-                            <td>Subject Presentation</td>
-                            <td><input type="radio" name="subject_presentation" value="very_poor"></td>
-                            <td><input type="radio" name="subject_presentation" value="poor"></td>
-                            <td><input type="radio" name="subject_presentation" value="neutral"></td>
-                            <td><input type="radio" name="subject_presentation" value="good"></td>
-                            <td><input type="radio" name="subject_presentation" value="great"></td>
+                            <td style="width: 45%;">Subject Presentation</td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="subject_presentation" value="very_poor" required></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="subject_presentation" value="poor" ></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="subject_presentation" value="neutral" ></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="subject_presentation" value="good" ></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="subject_presentation" value="great" ></td>
                           </tr>
                           <tr class="radio-field">
-                            <td>The pace of the webinar</td>
-                            <td><input type="radio" name="webinar_pace" value="very_poor"></td>
-                            <td><input type="radio" name="webinar_pace" value="poor"></td>
-                            <td><input type="radio" name="webinar_pace" value="neutral"></td>
-                            <td><input type="radio" name="webinar_pace" value="good"></td>
-                            <td><input type="radio" name="webinar_pace" value="great"></td>
+                            <td style="width: 45%;">The pace of the webinar</td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="webinar_pace" value="very_poor" required></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="webinar_pace" value="poor" ></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="webinar_pace" value="neutral" ></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="webinar_pace" value="good" ></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="webinar_pace" value="great" ></td>
                           </tr>
                           <tr class="radio-field">
-                            <td>The duration of the webinar</td>
-                            <td><input type="radio" name="webinar_duration" value="very_poor"></td>
-                            <td><input type="radio" name="webinar_duration" value="poor"></td>
-                            <td><input type="radio" name="webinar_duration" value="neutral"></td>
-                            <td><input type="radio" name="webinar_duration" value="good"></td>
-                            <td><input type="radio" name="webinar_duration" value="great"></td>
+                            <td style="width: 45%;">The duration of the webinar</td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="webinar_duration" value="very_poor" required></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="webinar_duration" value="poor" ></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="webinar_duration" value="neutral" ></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="webinar_duration" value="good" ></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="webinar_duration" value="great" ></td>
                           </tr>
-                          <tr class="radio-field">
-                            <td>Trainer's knowledge</td>
-                            <td><input type="radio" name="trainer_knowledge" value="very_poor"></td>
-                            <td><input type="radio" name="trainer_knowledge" value="poor"></td>
-                            <td><input type="radio" name="trainer_knowledge" value="neutral"></td>
-                            <td><input type="radio" name="trainer_knowledge" value="good"></td>
-                            <td><input type="radio" name="trainer_knowledge" value="great"></td>
+                          <tr class="radio-field" >
+                            <td style="width: 45%;">Trainer's knowledge</td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="trainer_knowledge" value="very_poor" required></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="trainer_knowledge" value="poor" ></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="trainer_knowledge" value="neutral" ></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="trainer_knowledge" value="good" ></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="trainer_knowledge" value="great" ></td>
                           </tr>
                         </tbody>
                       </table>
                 </div>
-                <button data-previous>BACK</button>
-                <button data-next>CONTINUE</button>
+                <div class="button-container">
+                  <button class="back" data-previous>BACK</button>
+                  <button class="continue" data-next>CONTINUE</button>
+                </div>
 
             </div>
             <div class="page-container" data-step>
@@ -133,52 +137,54 @@
                           <tr>
                             <th></th>
                             <th>Yes</th>
-                            <th>Not Sure</th>
                             <th>No</th>
+                            <th>Not Sure</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr class="radio-field">
-                            <td>Did you gain new knowledge participating the webinar</td>
-                            <td><input type="radio" name="information_delivery" value="yes"></td>
-                            <td><input type="radio" name="information_delivery" value="not_sure"></td>
-                            <td><input type="radio" name="information_delivery" value="no"></td>
+                            <td style="width: 64%;">Did you gain new knowledge participating the webinar</td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="new_knowledge" value="yes" required></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="new_knowledge" value="no"></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="new_knowledge" value="not_sure"></td>
                           </tr>
                           <tr class="radio-field">
-                            <td>Do you think you can apply what you learned in this webinar?</td>
-                            <td><input type="radio" name="information_delivery" value="yes"></td>
-                            <td><input type="radio" name="information_delivery" value="not_sure"></td>
-                            <td><input type="radio" name="information_delivery" value="no"></td>
+                            <td style="width: 64%;">Do you think you can apply what you learned in this webinar?</td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="apply_knowledge" value="yes" required></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="apply_knowledge" value="no"></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="apply_knowledge" value="not_sure"></td>
                           </tr>
                           <tr class="radio-field">
-                            <td>Do you regularly attend webinars?</td>
-                            <td><input type="radio" name="information_delivery" value="yes"></td>
-                            <td><input type="radio" name="information_delivery" value="not_sure"></td>
-                            <td><input type="radio" name="information_delivery" value="no"></td>
+                            <td style="width: 64%;">Do you regularly attend webinars?</td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="attend_webinars" value="yes" required></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="attend_webinars" value="no"></td>
+                            <td style="width: 12%; text-align:center"><input type="radio" name="attend_webinars" value="not_sure"></td>
                           </tr>
                         </tbody>
                       </table>
                 </div>
                 <div class="field">
                     <div class="label">What was the best thing about this webinar?</div>
-                    <input type="textfield" placeholder="Type here ...">
+                    <input type="textfield" name="best_webinar" placeholder="Type here ...">
                 </div>
                 <div class="field">
                     <div class="label">What was the worst thing about this webinar?</div>
-                    <input type="textfield" placeholder="Type here ...">
+                    <input type="textfield" name="worst_webinar"placeholder="Type here ...">
                 </div>
                 <div class="field">
-                    <div class="label">Any suggestions.</div>
-                    <input type="textfield" placeholder="Type here ...">
+                    <div class="label">Any suggestions:</div>
+                    <input type="textfield" name="suggestions_webinar" placeholder="Type here ...">
                 </div>
-                <button data-previous>BACK</button>
-                <input type="submit">
+                <div class="button-container">
+                  <button class="back" data-previous>BACK</button>
+                  <input type="submit">
+                </div>
+            </div>
+            <div class="page-container" data-step="3">
+              <h2>Thank you for participating!</h2>
+              <button id="submit-another">SUBMIT ANOTHER</button>
             </div>
         </form>
-        <div class="page-container" data-step>
-            <h2>Thank you for participating!</h2>
-            <button>SUBMIT ANOTHER</button>
-        </div>
     </div>
     </div>
     <script src='main.js'></script>

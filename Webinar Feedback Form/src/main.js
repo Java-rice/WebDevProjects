@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     form.addEventListener('submit', function(event) {
         event.preventDefault();
-        if (validateForm1() || validateForm2()) {
+        if (validateForm1() || validateForm2() || validateForm3()) {
             this.submit();
         }
     });
@@ -28,15 +28,11 @@ if (currentStep < 0) {
 
 multiStepForm.addEventListener('click', e => {
     if (e.target.matches('[data-next]')) {
-        if (currentStep === 0) {
-            if (!validateForm1()) {
-                return;
-            }
+        if (currentStep === 0 && !validateForm1()) {
+            return; 
         }
-        if (currentStep === 1) {
-            if (!validateForm2()) {
-                return;
-            }
+        if (currentStep === 1 && !validateForm2()) {
+            return;
         }
         currentStep += 1;
         showCurrentDataStep();
@@ -48,10 +44,14 @@ multiStepForm.addEventListener('click', e => {
         animateStepTransition();
     } else if (e.target.matches('[type="submit"]')) { 
         e.preventDefault();
+        if (currentStep === 2 && !validateForm3()) {
+            return;
+        }
         submitForm();
         animateStepTransition();
     }
 });
+
 
 
 
@@ -85,20 +85,33 @@ function validateForm2() {
     }
 
     var radioGroups = document.querySelectorAll('.page-container.active .radio-field');
-    var radioGroupsArray = Array.from(radioGroups);
-    for (var i = 0; i < radioGroupsArray.length; i++) {
-        var radioButtons = radioGroupsArray[i].querySelectorAll('input[type="radio"]');
-        var radioButtonsArray = Array.from(radioButtons);
-        var isSelected = radioButtonsArray.some(radioButton => radioButton.checked);
+    for (var i = 0; i < radioGroups.length; i++) {
+        var radioButtons = radioGroups[i].querySelectorAll('input[type="radio"]');
+        var isSelected = Array.from(radioButtons).some(radioButton => radioButton.checked);
         if (!isSelected) {
-            return false; // If any group has no radio button selected, return false
+            return false;
         }
     }
-
     return true;
 }
 
+function validateForm3() {
+    var radioGroupNames = ["new_knowledge", "apply_knowledge", "attend_webinars"];
 
+    // Loop through each group name to check if at least one option is selected
+    for (var i = 0; i < radioGroupNames.length; i++) {
+        var groupName = radioGroupNames[i];
+        var options = document.querySelectorAll(`input[name="${groupName}"]:checked`);
+        if (options.length === 0) {
+            // If no radio button is selected in the current group, alert and return false
+            alert("Please answer all the questions.");
+            return false;
+        }
+    }
+
+    // If all checks pass
+    return true;
+}
 
 
 function showCurrentDataStep() {
