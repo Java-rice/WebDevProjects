@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     form.addEventListener('submit', function(event) {
         event.preventDefault();
-        if (validateForm()) {
+        if (validateForm1() || validateForm2()) {
             this.submit();
         }
     });
@@ -28,49 +28,68 @@ if (currentStep < 0) {
 
 multiStepForm.addEventListener('click', e => {
     if (e.target.matches('[data-next]')) {
-        e.preventDefault();
         if (currentStep === 0) {
-            if (!validateForm()) {
+            if (!validateForm1()) {
+                return;
+            }
+        }
+        if (currentStep === 1) {
+            if (!validateForm2()) {
                 return;
             }
         }
         currentStep += 1;
+        showCurrentDataStep();
+        animateStepTransition();
     } else if (e.target.matches('[data-previous]')) {
         e.preventDefault();
         currentStep -= 1;
+        showCurrentDataStep();
+        animateStepTransition();
     } else if (e.target.matches('[type="submit"]')) { 
         e.preventDefault();
         submitForm();
+        animateStepTransition();
     }
-    showCurrentDataStep();
 });
 
 
 
-function validateForm() {
-    // Get the values of the input fields for the first step
+function validateForm1() {
+    
     var name = document.querySelector('.page-container.active input[name="name"]').value.trim();
     var mobileNumber = document.querySelector('.page-container.active input[name="mobile_number"]').value.trim();
     var email = document.querySelector('.page-container.active input[name="email"]').value.trim();
     
-    // Mobile Number and Email Format
-    var mobileNumberPattern = /^\d{11}$/; // 11 Digits
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Standard Email Format
+    
+    var mobileNumberPattern = /^\d{11}$/; 
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
 
-    // Check if the name, mobile number, and email are filled
     if (name === '' || mobileNumber === '' || email === '') {
-        alert('Please fill out all required fields.');
-        return false; // If any of the fields are empty, return false
+        return false; 
     } else if (!mobileNumberPattern.test(mobileNumber)) {
-        alert('Please enter a valid mobile number.');
-        return false; // If mobile number doesn't match the pattern, return false
+        return false; 
     } else if (!emailPattern.test(email)) {
-        alert('Please enter a valid email address.');
-        return false; // If email doesn't match the pattern, return false
+        return false; 
     } else {
-        return true; // If all conditions pass, return true
+        return true; 
     }
 }
+
+function validateForm2() {
+    
+    var webinar_name = document.querySelector('.page-container.active input[name="webinar_name"]').value.trim();
+    var date_webinar = document.querySelector('.page-container.active input[name="date_webinar"]').value.trim();
+
+
+    if (webinar_name === '' || date_webinar === ''){
+        return false; 
+    } else {
+        return true; 
+    }
+}
+
+
 
 function showCurrentDataStep() {
     formSteps.forEach((step, index) => {
@@ -149,37 +168,59 @@ function submitForm() {
 }
 
 function resetForm() {
-    formSteps.forEach((step, index) => {
-        step.classList.remove('active');
-        const textInputs = step.querySelectorAll('input[type="text"]');
-        textInputs.forEach(input => input.value = '');
+    const pageContainers = document.querySelectorAll('.page-container');
+    pageContainers.forEach(container => {
+        container.style.transition = 'opacity 0.5s ease-out'; 
+        container.style.opacity = '0';
+    });
+
+    setTimeout(() => {
+        pageContainers.forEach(container => {
+            container.style.opacity = '1'; 
+        });
+
+        formSteps.forEach((step, index) => {
+            step.classList.remove('active');
+            const textInputs = step.querySelectorAll('input[type="text"]');
+            textInputs.forEach(input => input.value = '');
+            
+            const radioInputs = step.querySelectorAll('input[type="radio"]');
+            radioInputs.forEach(input => input.checked = false);
+
+            const dateInputs = step.querySelectorAll('input[type="date"]');
+            dateInputs.forEach(input => input.value = '');
+
+            const email = step.querySelectorAll('input[type="email"]');
+            email.forEach(input => input.value = '');
+
+            const textareaInputs = step.querySelectorAll('textarea');
+            textareaInputs.forEach(input => input.value = '');
+
+            if (index === 0) {
+                step.classList.add('active');
+            }
+        });
         
-        const radioInputs = step.querySelectorAll('input[type="radio"]');
-        radioInputs.forEach(input => input.checked = false);
-
-        const dateInputs = step.querySelectorAll('input[type="date"]');
-        dateInputs.forEach(input => input.value = '');
-
-        const textareaInputs = step.querySelectorAll('textarea');
-        textareaInputs.forEach(input => input.value = '');
-
-        if (index === 0) {
-            step.classList.add('active');
-        }
-    });
-    
-    const circles = document.querySelectorAll('.step-circle');
-    circles.forEach((circle, index) => {
-        if (index === 0) {
-            circle.classList.add('circle-active');
-        } else {
-            circle.classList.remove('circle-active', 'circle-visited');
-        }
-    });
-    currentStep = 0;
-    showCurrentDataStep();
+        const circles = document.querySelectorAll('.step-circle');
+        circles.forEach((circles, index) => {
+            if (index === 0) {
+                circles.classList.add('circle-active');
+            } else {
+                circles.classList.remove('circle-active', 'circle-visited');
+                circles.classList.add('circle-inactive');
+            }
+        });
+        currentStep = 0;
+        showCurrentDataStep();
+    }, 500); 
 }
-
-
-
-
+function animateStepTransition() {
+    const pageContainers = document.querySelectorAll('.page-container');
+    pageContainers.forEach(container => {
+        container.style.transition = 'opacity 0.5s ease-in'; 
+        container.style.opacity = '0';
+        setTimeout(() => {
+            container.style.opacity = '1';
+        }, 100); 
+    });
+}
