@@ -9,11 +9,127 @@ html {
     font-style: normal;
 }
 
+p{
+    font-family: "IBM Plex Sans";
+    font-weight: bolder;
+    font-size: 13px;
+    margin-left: 2px;
+}
+
+button{
+    font-family: "IBM Plex Sans";
+    font-weight: bolder;
+    font-size: 12px;
+    
+}
+
+th{
+    font-family: "IBM Plex Sans";
+    font-size: 10px;
+    padding-bottom: 10px;
+}
+
+.continue-btn{
+    width: 100%;
+    text-align: end;
+}
+
+
+.field {
+    font-size: 14px; 
+  }
+  
+.label {
+    margin-bottom: 10px;
+    font-size: 12px; 
+}
+  
+table {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    border-spacing: 0;
+    margin-bottom: 10px;
+}
+  
+.table th,
+.table td {
+    padding: 8px;
+    font-size: 10px;
+    border: 1px solid black;
+}
+
+td{
+    border-top: thin solid #E1E1E6;
+    border-bottom: thin solid #E1E1E6;
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: 0px;
+}
+
+tbody, thead{
+    width: 100%;
+}
+
+tr {
+    width: 100%;
+}
+
+tr {
+    font-size: 12px; 
+    border-top: 1px solid #000000;
+    padding: 5px 5px;
+}
+  
+.radio-field input[type="radio"] {
+    vertical-align: middle;
+    margin: 0px;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    background-clip: content-box;
+    border: 1px solid #bbbbbb;
+    background-color: #e7e6e7;
+    border-radius: 50%;
+  }
+  
+  input[type="radio"]:checked {
+    background-color: #840E0E;
+  }
+  
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+  
+.radio-field input[type="radio"]:checked + label {
+    font-weight: bold;
+    background-color:#840E0E;
+}
+
 .head-container{
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 24px;
+    border-bottom: 1px solid rgb(226, 226, 226);
+    margin-bottom: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-bottom: 15px;
 }
+
+
 
 .circle-active .circle-style {
     stroke: #A00F0F;
@@ -22,9 +138,28 @@ html {
 }
 
 .circle-inactive .circle-style {
-    stroke: #E1E1E6;
+    stroke: #909090;
     stroke-width: 2;
-    fill: #E1E1E6;
+    fill: #909090;
+}
+
+.text-active {
+    fill: #FFFFFF; 
+    font-size: 10px;
+    font-family: "sans-serif";
+    font-weight: 600;
+}
+
+.text-inactive {
+    fill: #f8efef; 
+    font-size: 12px;
+}
+
+.text-visited {
+    fill: #FFFFFF; 
+    font-size: 10px;
+    font-family: "sans-serif";
+    font-weight: 600;
 }
 
 .circle-visited .circle-style {
@@ -33,25 +168,15 @@ html {
     fill: green;
 }
 
-.text-active .text-style {
-    fill: #F9F0F0; /* Change to the desired active text color */
-    font-size: 15px; /* Adjust the font size as needed */
-}
-
-.text-inactive .text-style {
-    fill: #8D8D99; /* Change to the desired inactive text color */
-    font-size: 15px; /* Adjust the font size as needed */
-}
-
 .text-visited .text-style {
-    fill: #F9F0F0; /* Change to the desired visited text color */
-    font-size: 15px; /* Adjust the font size as needed */
+    fill: #F9F0F0; 
+    font-size: 15px; 
 }
 
   
 .arrow{
-    width: 20px;
-    height: 20px;
+    width: 8px;
+    height: 13px;
 }
 
 .step-label{
@@ -64,6 +189,11 @@ html {
     font-size: 16px;
     font-weight: bold;
 }
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 
 .main-container{
@@ -74,31 +204,33 @@ html {
     min-height: 90vh;
 }
 
-button[data-next] {
-    background-color: #A00F0F; /* Blue */
-    color: white; /* Text color */
+.continue {
+    background-color: #A00F0F; 
+    color: white; 
     border: none;
-    padding: 10px 20px;
+    margin-top: 15px;
+    padding: 8px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
   
-button[data-next]:hover {
-    background-color: #840E0E; /* Darker shade of blue for hover effect */
+.continue:hover {
+    background-color: #840E0E; 
 }
 
-button[data-previous] {
-    background-color: #FFFFFF; /* Blue */
-    color: #840E0E; /* Text color */
+.back {
+    background-color: #FFFFFF; 
+    color: #840E0E; 
     border: 2px solid #840E0E;
-    padding: 10px 20px;
+    margin-top: 15px;
+    padding: 8px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
   
-  button[data-previous]:hover {
+.back:hover {
     color: white;
-    background-color: #A00F0F; /* Darker shade of blue for hover effect */
+    background-color: #A00F0F; 
 }
 
 .container{
@@ -106,8 +238,7 @@ button[data-previous] {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* min-height: 90vh; */
-    max-height: 500px;
+    max-height: 600px;
     max-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     padding: 20px;
@@ -121,41 +252,85 @@ button[data-previous] {
     align-items: start;
     /* border: 5px solid black; */
     max-width: 400px;
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    height: auto;
     gap: 1rem;
     display: none;
 }
+
 
 .page-container.active{
     display: block;
 
 }
 .label {
-    font-size: 12px; /* Change this value to your desired font size */
+    font-size: 13px;
+    color: rgb(75, 75, 75);
     margin-bottom: 3px;
 }
 
 input[type="text"],
 input[type="date"],
+input[type="email"],
 input[type="textfield"] {
     width: 400px;
     height: 2.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid #e7e7e7;
     border-radius: 4px;
     padding: 0 0.5rem;
     box-sizing: border-box;
     margin-bottom: 20px;
 }
 
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="date"]::placeholder{
+   color: #bdbdbd;
+}
+
 input[type="submit"] {
-    background-color: #A00F0F; /* Blue */
-    color: white; /* Text color */
+    background-color: #A00F0F; 
+    color: white; 
     border: none;
-    padding: 10px 20px;
+    margin-top: 15px;
+    padding: 8px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
   
 input[type="submit"]:hover {
-    background-color: #840E0E; /* Darker shade of blue for hover effect */
+    background-color: #840E0E; 
 }
+
+#submit-another {
+    background-color: #FFFFFF; 
+    border: 2px solid #840E0E; 
+    color: #840E0E; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: block; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    margin: 0 auto; 
+    }
+
+#submit-another:hover {
+    color: white;
+    background-color: #A00F0F;
+}
+
+h2 {
+    margin-top: 2px;
+}
+
+.td{
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
