@@ -77,17 +77,27 @@ function validateForm1() {
 }
 
 function validateForm2() {
-    
     var webinar_name = document.querySelector('.page-container.active input[name="webinar_name"]').value.trim();
     var date_webinar = document.querySelector('.page-container.active input[name="date_webinar"]').value.trim();
 
-
-    if (webinar_name === '' || date_webinar === ''){
-        return false; 
-    } else {
-        return true; 
+    if (webinar_name === '' || date_webinar === '') {
+        return false;
     }
+
+    var radioGroups = document.querySelectorAll('.page-container.active .radio-field');
+    var radioGroupsArray = Array.from(radioGroups);
+    for (var i = 0; i < radioGroupsArray.length; i++) {
+        var radioButtons = radioGroupsArray[i].querySelectorAll('input[type="radio"]');
+        var radioButtonsArray = Array.from(radioButtons);
+        var isSelected = radioButtonsArray.some(radioButton => radioButton.checked);
+        if (!isSelected) {
+            return false; // If any group has no radio button selected, return false
+        }
+    }
+
+    return true;
 }
+
 
 
 
