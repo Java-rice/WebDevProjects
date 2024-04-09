@@ -47,8 +47,9 @@ multiStepForm.addEventListener('click', e => {
         if (currentStep === 2 && !validateForm3()) {
             return;
         }
-        submitForm();
+        showCurrentDataStep();
         animateStepTransition();
+        submitForm();
     }
 });
 
@@ -96,20 +97,14 @@ function validateForm2() {
 }
 
 function validateForm3() {
-    var radioGroupNames = ["new_knowledge", "apply_knowledge", "attend_webinars"];
-
-    // Loop through each group name to check if at least one option is selected
-    for (var i = 0; i < radioGroupNames.length; i++) {
-        var groupName = radioGroupNames[i];
-        var options = document.querySelectorAll(`input[name="${groupName}"]:checked`);
-        if (options.length === 0) {
-            // If no radio button is selected in the current group, alert and return false
-            alert("Please answer all the questions.");
+    var radioGroups = document.querySelectorAll('.page-container.active .radio-field');
+    for (var i = 0; i < radioGroups.length; i++) {
+        var radioButtons = radioGroups[i].querySelectorAll('input[type="radio"]');
+        var isSelected = Array.from(radioButtons).some(radioButton => radioButton.checked);
+        if (!isSelected) {
             return false;
         }
     }
-
-    // If all checks pass
     return true;
 }
 
