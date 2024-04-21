@@ -53,6 +53,12 @@ multiStepForm.addEventListener('click', e => {
         animateStepTransition();
     } else if (e.target.matches('[type="submit"]')) { 
         e.preventDefault();
+        if (currentStep === 2 && !validateForm3()) {
+            return;
+        }
+        currentStep += 1;
+        showCurrentDataStep();
+        animateStepTransition();
         submitForm();
         animateStepTransition();
     }
@@ -142,6 +148,7 @@ function showCurrentDataStep() {
 
 
 function submitForm() {
+
     var name = multiStepForm.elements['name'].value;
     var mobileNumber = multiStepForm.elements['mobile_number'].value;
     var email = multiStepForm.elements['email'].value;
