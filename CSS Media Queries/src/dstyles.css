@@ -1,0 +1,331 @@
+html{
+    margin: 0;
+    padding: 0;
+    background-color: #DCC8A7;
+}
+
+body{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+header{
+    width: 100%;
+    height: 10vh;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#title{
+    font-family: "Koulen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 39px;
+    line-height: 72px;
+}
+
+#firstbg{
+    position: absolute;
+    height: 100%;
+    top: 2px;
+    left: -480px;
+    gap: 0px;
+    opacity: 0px;
+    z-index: -1000
+}
+
+h2{
+    font-family: Inter;
+    font-size: 39px;
+    font-weight: 800;
+    margin-bottom: 0px;
+    line-height: 56px;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+.firstcontainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+}
+
+#first-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: -20px;
+    align-items: center;
+    text-align: center;
+}
+
+#start{
+    padding: 20px 34.36px 20px 34.69px;
+    border-radius: 100px;
+    opacity: 0px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 150px;
+    text-align: center;
+    background-color: black;
+    color:white;
+}
+
+/***********************End of First part**********************************/
+
+#secondtitle{
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 56px;
+    text-align: left;
+    width: 80%;
+    text-wrap: wrap;
+    align-self: center;
+
+}
+
+#secondtitlecontainer{
+    display: flex;
+    justify-content: center;
+}
+
+
+.secondcontainer{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.sub-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+}
+
+.digit{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.item-container{
+    width: 352px;
+    height: 343.19px;
+    padding: 51px 41px;
+    gap: 0px;
+    border-radius: 24px;
+    border: 1px 0px 0px 0px;
+    background-color: #FFFFFF80;
+}
+
+.item-container p{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+}
+
+.item-container h4{
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 33.6px;
+    text-align: left;
+}
+
+.item-container h3{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+}
+
+/***********************End of Second part**********************************/
+
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 50vh;
+}
+
+#boxleftimage{
+    flex-direction: row-reverse;
+}
+
+#boxleftimage image{
+    margin-right: 100px;
+}
+
+.left-part{
+    width: 550px;
+    padding-right: 100px;
+    top: 0;
+}
+
+#boxleftimage .left-part{
+    margin-left: 200px;
+    margin-right: 0px;
+}
+
+.right-part{
+    height: 100%;
+}
+
+.box h2{
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 800;
+    width: 80%;
+    line-height: 56px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.box p{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    width: 90%;
+    text-align: left;
+}
+
+
+/***********************End of Third part**********************************/
+
+.comment p{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+}
+
+.comment h3{
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.comment h4{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: left;
+    margin-top: 0;
+    
+}
+
+.secondcontainer h2{
+    margin-bottom: 70px;
+    font-size: 48px;
+}
+
+.left-container{
+    background-color: #B4E6C299; 
+    border-radius: 32px;
+    padding: 40px;
+    padding-bottom: 10px;
+    padding-top: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 300px;
+}
+
+.middle-container{
+    background-color:#F7E2E299; 
+    border-radius: 32px;
+    padding: 40px;
+    padding-bottom: 10px;
+    padding-top: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 300px;
+}
+
+.right-container{
+    background-color: #F0E9BA99; 
+    border-radius: 32px;
+    padding: 40px;
+    padding-bottom: 10px;
+    padding-top: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 350px;
+}
+
+.container4{
+    display: flex;
+    justify-content: center;
+}
+
+.image-opacity{
+    position: relative;
+    opacity: 40%;
+    z-index: 1000;
+}
+
+.container4{
+    height: 100vh;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.top{
+    top: 10px;
+}
+
+.bottom{
+    bottom: 70px;
+}
+
+.quotation-top{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    top: 10px;
+    z-index: 999;
+}
+
+.quotation-bottom{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    bottom: 70px;
+}
+
+.this-text2{
+    margin-top: 0;
+}
+
+/***********************End**********************************/
