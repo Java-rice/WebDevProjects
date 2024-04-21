@@ -28,11 +28,20 @@ if (currentStep < 0) {
 
 multiStepForm.addEventListener('click', e => {
     if (e.target.matches('[data-next]')) {
-        if (currentStep === 0 && !validateForm1()) {
-            return; 
+        if (currentStep === 0) {
+            if (!validateForm1()) {
+                return;
+            }
         }
-        if (currentStep === 1 && !validateForm2()) {
-            return;
+        if (currentStep === 1) {
+            if (!validateForm2()) {
+                return;
+            }
+        }
+        if (currentStep === 2) {
+            if (!validateForm3()) {
+                return;
+            }
         }
         currentStep += 1;
         showCurrentDataStep();
@@ -44,15 +53,10 @@ multiStepForm.addEventListener('click', e => {
         animateStepTransition();
     } else if (e.target.matches('[type="submit"]')) { 
         e.preventDefault();
-        if (currentStep === 2 && !validateForm3()) {
-            return;
-        }
-        showCurrentDataStep();
-        animateStepTransition();
         submitForm();
+        animateStepTransition();
     }
 });
-
 
 
 
@@ -126,8 +130,6 @@ function showCurrentDataStep() {
                 textElement.classList.replace('text-visited', 'text-active');
                 textElement.classList.replace('text-inactive', 'text-active');
                 textElement.classList.add('text-active');
-
-             
             } else {
                 svgElement.classList.replace('circle-active', 'circle-inactive');
                 textElement.classList.replace('text-active', 'text-inactive');
