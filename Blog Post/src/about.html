@@ -3,15 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Document</title>
+=======
+    <title>About Us</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
+
+>>>>>>> origin/main
     <style>
-      
+      body {
+        font-family: 'Montserrat';
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        padding: 20px 0;
+      }
+
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1419px;
+        height: 101px;
+        flex-shrink: 0;
+        border-radius: 12px;
+        background: #FFF;
+        box-shadow: 0px 0px 6px 0px rgba(208, 82, 112, 0.48);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+    nav a {
+      color: #424242;
+      font-family: 'Montserrat';
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+   
+    nav a:hover{
+      color: #25AC95;
+      color: #25AC95;
+      font-family: Montserrat;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 580;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+
+    .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-size: 37px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.9px;
+    text-transform: lowercase;
+    }
+
+    .multicolor a{
+      background-image: linear-gradient(to right, #50D4BD 28.5%, #424242 20%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-right: 20px;
+    }
+
+    footer {
+    background-color: #343A40;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: auto;
+    height: 64.839px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    footer p {
+        color: #E5E5E5;
+        font-family: 'Lora';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0;
+        margin-left: 10px;
+    }
+
+    footer a {
+        color: #424242;
+        font-family: 'Montserrat';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+        text-decoration: none;
+        margin-left: 20px;
+    }
+
+    .multicolor-footer a {
+        background-image: linear-gradient(to right, #50D4BD 28.5%, #FFFFFF 20%);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .main-cta-button {
+      color: #FFFFFF;
+      font-family: 'Montserrat';
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      background: none;
+      cursor: pointer;
+      margin-right: 10px;
+  }
+
+    .main-title {
+      color: #25AC95;
+      font-family: Montserrat;
+      font-size: 52px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-align: center;
+    }
+
+    .main-paragraph {
+      color: #424242;
+      text-align: center;
+      font-family: Montserrat;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 40px; /* 166.667% */
+    }
+
+    .main-section{
+      width: 899px;
+      height: 720px;
+      margin: 23px;
+      margin-top: 100px;
+      flex-shrink: 0;
+      background: #F6F6F6;
+      box-shadow: -5px 5px 4px 0px rgba(0, 0, 0, 0.25);
+      z-index: 0;
+    }
+
+    .main-section-title {
+      width: 840px;
+      height: 119.141px;
+      flex-shrink: 0;
+      color: #424242;
+      font-family: 'Montserrat';
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-align: left;
+      padding-top: 40px;
+      padding-left: 50px;
+    }
+
+    .green {
+      color: #25AC95;
+    }
+
+    .main-section-paragraph {
+      width: 783px;
+      color: #424242;
+      text-align: justify;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 40px; /* 166.667% */
+      padding-top: 20px;
+      padding-left: 50px;
+    }
+
+    .main-images{
+      position: absolute;
+      top: 29rem;
+      left: 57rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: -1;
+    }
+
+    img {
+      display: block;
+      margin: auto;
+    }
+
+    .second-main {
+      width: 100%;
+      height: 100%;
+      background: #F6F6F6;
+      box-shadow: -5px 5px 4px 0px rgba(0, 0, 0, 0.25);
+      margin-top: 120px;
+    }
+
+    h3 {
+      color: #25AC95;
+      font-size: 52px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-align: center;
+      padding-top: 2rem;
+    }
+
+    .main-cta-paragraph {
+      color: #424242;
+      text-align: center;
+      font-family: Montserrat;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 40px; /* 166.667% */
+      padding-bottom: 1rem;
+    }
     </style>
 </head>
+
 <body>
   <header>
     <div class="container">
-      <a href="#" class="logo">mentalhealthmatters.co</a>
+      <span class="multicolor"><a href="#" class="logo">mentalhealthmatters.co</a></span>
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
@@ -22,16 +268,20 @@
   
     <main class="main-content">
       <h1 class="main-title">About Us</h1>
-      <p class="main-paragraph">
-        We help and support everyone in their journey towards better mental health and overall
-        well-being through our compassionate guidance and resources.
-      </p>
-  
+        <p class="main-paragraph">
+          We help and support everyone in their journey <br>towards better mental health and overall
+          well-being <br>through our compassionate guidance and <br>resources.
+        </p>
+
       <div class="main-section">
         <h2 class="main-section-title">
-          We aim to amplify diverse voices and experiences, providing a platform for everyone to be
-          heard.
-        </h2>
+          We aim to 
+          <span class="green">amplify diverse voices</span> 
+          and 
+          <span class="green">experiences</span>, 
+          providing a 
+          <span class="green">platform for everyone to be heard.</span>
+        </h2>        
         <p class="main-section-paragraph">
           Regardless of race, gender, age, or background, we believe that everyone deserves to be
           heard and valued. Our platform aims to create a safe and inclusive space where individuals
@@ -45,22 +295,27 @@
           change and promote mental well-being for all.
         </p>
       </div>
-  
-      <div class="main-section main-cta">
+      <div class="main-images">
+        <img src="5.png" alt="image">
+        <img src="3.png" alt="image">
+        <img src="4.png" alt="image">
+      </div>
+
+      <div class="second-main">
         <h3 class="main-cta-title">Join Us Today!</h3>
         <p class="main-cta-paragraph">
-          Become part of a supportive community dedicated to promoting mental health and well-being.
-          Together, we can make a difference in the lives of individuals from all backgrounds!
+          Become part of a supportive community dedicated <br>to promoting mental health and well-being. <br>
+          Together, we can make a difference in the lives of<br> individuals from all backgrounds!
         </p>
-        <button class="main-cta-button">
-          Join Us Now
-        </button>
       </div>
     </main>
   
     <footer class="footer">
-      <p>2023 | Mind Publisher Studio</p>
-      <a href="#" class="footer-link">mentalhealthmatters.co</a>
+      <p>2024 | Mind Publisher Studio</p>
+      <span class="multicolor-footer"><a href="#" class="footer-link">mentalhealthmatters.co</a></span>
+      <button class="main-cta-button">
+        Join Us Now
+      </button>
     </footer>
 </body>
 </html>
