@@ -11,10 +11,11 @@ const Footer = () => {
       <div className="top-footer-container">
         <div className="top-footer-content">
           <img src={footer_bg} alt="Footer background" className="footer-bg" />
+          <h1>Subcribe and be Update</h1>
         </div>
       </div>
-      <div className="footer-container">
-        <div className="footer-content">
+      <div className="bottom-footer-container">
+        <div className="bottom-footer-content">
           <h1>Filo Travel</h1>
           <p>
             Welcome to Filo Travel! Let’s inspire locals and international
