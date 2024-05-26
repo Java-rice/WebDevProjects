@@ -1,12 +1,22 @@
 import React from 'react';
+import backgroundImage from '../../../assets/destination_bg.png'
+import Hero from '../../Hero/Hero'
+import './Destination.css'
+import Spots from '../../TouristSpot/Spots'
 
 const Destination = () => {
-    return (
-        <div>
-            <h1>Destination</h1>
-            <p>This is the Destination page content.</p>
-        </div>
-    );
+    const heroContent = {
+        title: "Top 10 Tourist spots ",
+        content: "",
+        backgroundImage: backgroundImage 
+      };
+    
+      return (
+        <>
+          <Hero title={heroContent.title} content={heroContent.content} backgroundImage={heroContent.backgroundImage} />
+          <Spots/>
+        </>
+      );
 };
 
 export default Destination;
