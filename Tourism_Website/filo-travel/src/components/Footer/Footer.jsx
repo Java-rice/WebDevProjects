@@ -9,9 +9,14 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="top-footer-container">
+        <img src={footer_bg} alt="Footer background" className="footer-bg" />
         <div className="top-footer-content">
-          <img src={footer_bg} alt="Footer background" className="footer-bg" />
           <h1>Subcribe and be Update</h1>
+          <input
+            type="email"
+            placeholder="Please enter your email address to get latest updates and offers"
+            className="footer-email-input"
+          />
         </div>
       </div>
       <div className="bottom-footer-container">

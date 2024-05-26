@@ -16,6 +16,37 @@
     z-index: -1;
   }
   
+  .top-footer-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 20px;
+    z-index: 1;
+  }
+
+  .top-footer-content h1 {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 2rem;
+    margin: 50px;
+  }
+
+  .footer-email-input {
+    width: 70%;
+    height: 15%;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #FFF;
+    color: #363636;
+    font-family: Lato;
+    font-size: 1rem;
+    padding: 30px;
+    border: none;
+  }
+
   .bottom-footer-container {
     max-width: 100%;
     padding: 50px;
