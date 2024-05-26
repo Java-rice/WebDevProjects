@@ -1,0 +1,33 @@
+.home{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('../../assets/home_bg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.title-text{
+    width: 60%;
+    color: #F8F8F8;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.title-text h1{
+    font-size: 4rem;
+    text-align: center;
+}
+
+.title-text p{
+    font-size: 1rem;
+    text-align: center;
+}
+
+.introduction{
+    width: 100%;
+    min-height: 100vh;;
+}
