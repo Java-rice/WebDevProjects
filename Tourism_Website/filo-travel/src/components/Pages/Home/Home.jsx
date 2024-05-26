@@ -21,9 +21,6 @@ const Home = () => {
       />
       <div className="introduction container"></div>
       <div>
-        {/* Your other home page components go here */}
-
-        {/* Footer component */}
         <Footer />
       </div>
     </>
