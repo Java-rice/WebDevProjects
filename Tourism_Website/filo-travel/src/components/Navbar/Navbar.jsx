@@ -1,18 +1,19 @@
-import React from 'react'
-import './Navbar.css'
-import mainlogo from '../../assets/filo-travel_logo.png'
-import testlogo from '../../assets/test_only.png'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
+import mainlogo from '../../assets/filo-travel_logo.png';
 
 const Navbar = () => {
-    return(
+    return (
         <nav className='container'>
             <img src={mainlogo} alt="" className='logo'/>
             <ul>
-                <li><a>Home</a></li>
-                <li><a>Destination</a></li>
-                <li><a>About Us</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/destination">Destination</Link></li>
+                <li><Link to="/about">About Us</Link></li>
             </ul>
         </nav>
-    )
-}
-export default Navbar
+    );
+};
+
+export default Navbar;
