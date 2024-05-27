@@ -14,6 +14,7 @@ import TaalVolcano from '../TouristContent/TaalVolcano';
 
 function SpotsNav() {
   const [selectedSpot, setSelectedSpot] = useState('Boracay');
+  const [isFading, setIsFading] = useState(false);
 
   const spots = [
     'Boracay',
@@ -27,6 +28,14 @@ function SpotsNav() {
     'Taal Volcano',
     'Mayon Volcano'
   ];
+
+  const handleSpotChange = (spot) => {
+    setIsFading(true);
+    setTimeout(() => {
+      setSelectedSpot(spot);
+      setIsFading(false);
+    }, 400);
+  };
 
   const renderContent = () => {
     switch (selectedSpot) {
@@ -62,14 +71,14 @@ function SpotsNav() {
         <ul className='spot-items'>
           {spots.map((spot) => (
             <li key={spot}>
-              <Link to="#" onClick={() => setSelectedSpot(spot)}>
+              <Link to="#" onClick={() => handleSpotChange(spot)} className={selectedSpot === spot ? 'active' : ''}>
                 {spot}
               </Link>
             </li>
           ))}
         </ul>
       </div>
-      <div className='spotcontent'>
+      <div className={`spotcontent ${isFading ? 'fade-out' : ''}`}>
         <p>Are you a traveler looking for a new adventure? Do you want to explore destinations that are off the beaten path and not overcrowded with tourists? Look no further than these top 10 emerging destinations. These hidden gems are waiting to be explored, and they offer a unique blend of culture, history, and natural beauty.</p>
         {renderContent()}
       </div>
