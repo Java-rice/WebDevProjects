@@ -19,9 +19,7 @@ const About = () => {
         content={heroContent.content}
         backgroundImage={heroContent.backgroundImage}
       />
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 };
