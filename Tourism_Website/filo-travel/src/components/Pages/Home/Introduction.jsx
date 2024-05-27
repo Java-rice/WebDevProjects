@@ -1,6 +1,6 @@
 import React from "react";
 import "./Introduction.css";
-import Carousel from "../../Carousel/Carousel";
+import Carousel from "./Carousel/Carousel";
 
 const Introduction = () => {
   return (
