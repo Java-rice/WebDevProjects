@@ -15,3 +15,24 @@
 .content-change h1{
     font-size: 1.8rem;
 }
+
+.content-trip {
+    color: #00A0B1;
+    border: 2px dashed;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.content-trip p {
+    color: #363636;
+    margin-left: 24px;
+    margin-right: 22px;
+}
+
+.content-trip h2 {
+    margin-left: 24px;
+}
