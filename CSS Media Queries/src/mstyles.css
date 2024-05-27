@@ -31,7 +31,7 @@ header{
     position: absolute;
     height: 100%;
     top: 2px;
-    left: -580px;
+    left: -480px;
     gap: 0px;
     opacity: 0px;
     z-index: -1000
@@ -46,7 +46,7 @@ h2{
 }
 
 .container{
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-self: center;
     align-items: center;
@@ -119,6 +119,7 @@ h2{
     text-align: center;
     gap: 30px;
 }
+
 
 .digit{
     display: flex;
@@ -245,6 +246,15 @@ h2{
 .secondcontainer h2{
     margin-bottom: 70px;
     font-size: 48px;
+    text-align: center;
+}
+
+.sub-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
 }
 
 .left-container{
@@ -329,3 +339,101 @@ h2{
 }
 
 /***********************End**********************************/
+
+@media (min-width: 1410px) {
+    .container{
+        height: 100vh;
+    }
+
+    .container4, .box, .secondcontainer{
+        height: auto;
+    }
+
+    .secondcontainer h2{
+        text-align: left;
+    }
+
+    .firstcontainer{
+        height: 100vh;
+    }
+
+    .sub-container{
+        flex-direction: column;
+    }
+
+    .container4{
+        height: auto;
+        margin-bottom: 200px;
+        align-content: center;
+    }
+
+    .box{
+        margin-top: 100px;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-part{
+        width: 550px;
+        text-align: center;
+        padding-right: 0;
+        top: 0;
+    }
+
+    #boxleftimage .left-part{
+        margin-left: 0;
+    }
+
+    #boxleftimage{
+        flex-direction: column;
+    }
+    
+    #boxleftimage image{
+        margin-right: 0;
+    }
+
+
+    .box h2{
+        font-family: Inter;
+        font-size: 48px;
+        font-weight: 800;
+        width: 80%;
+        line-height: 56px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    .box p{
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 24px;
+        width: 90%;
+        text-align: left;
+    }
+
+    .quotation-top{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        top: 10px;
+        z-index: 999;
+    }
+
+    .the-title h2{
+        width: 100%;
+    }
+
+    .the-title p{
+        width: 100%;
+    }
+
+    .digit{
+        justify-content: center;
+    }
+
+    .item-container .digit{
+        justify-content: space-between;
+    }
+}
