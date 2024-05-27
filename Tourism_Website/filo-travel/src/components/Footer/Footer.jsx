@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="top-footer-container">
         <img src={footer_bg} alt="Footer background" className="footer-bg" />
         <div className="top-footer-content">
-          <h1>Subcribe and be Update</h1>
+          <h1>Subcribe and be Updated</h1>
           <input
             type="email"
             placeholder="Please enter your email address to get latest updates and offers"
