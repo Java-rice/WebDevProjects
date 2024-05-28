@@ -1,6 +1,13 @@
 import React from 'react'
 import './ContentStyle.css'
 import PuertoPrincesaImg from '../../assets/puerto_princesa_img.png'
+import PalawanVideo from '../../assets/videos/palawanvideo.mp4'
+import ReactPlayer from 'react-player';
+import PalawanThumbnail from '../../assets/palawan.jpg';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlayCircle} from '@fortawesome/free-solid-svg-icons';
+
+
 
 function PuertoPrincesa() {
   return (
@@ -27,6 +34,16 @@ function PuertoPrincesa() {
         <h2>Trip Route from Manila</h2>
         <p>To visit the Puerto Princesa Underground River from Manila, first fly to Puerto Princesa City, which takes about 1 hour and 25 minutes. From there, drive for two hours to Sabang Wharf, the starting point for the river tours. A short 15-20 minute boat ride from the wharf takes you to the river's entrance. Alternatively, you can book a complete tour package from Manila that includes flights, transfers, and the river tour.</p>
       </div>
+
+      <a href="https://www.youtube.com/watch?v=U-U3yE6dyXA" target="_blank"><h2 class="youtube-link">Virtual Tour | It's More Fun with You in Puerto Princesa</h2></a>
+      <ReactPlayer 
+      url={PalawanVideo}
+      controls={true} 
+      light={PalawanThumbnail}
+      playing={true}
+      playIcon={<FontAwesomeIcon icon={faPlayCircle} size="4x" style={{ color: 'white' }}/>}
+      height="450px" 
+      width="100%"/>
     </div>
   )
 }

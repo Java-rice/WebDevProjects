@@ -1,6 +1,12 @@
 import React from 'react'
 import './ContentStyle.css'
 import TaalImg from '../../assets/taal_img.png'
+import TaalVideo from '../../assets/videos/taalvideo.mp4'
+import ReactPlayer from 'react-player';
+import TaalThumbnail from '../../assets/taalthumbnail.jpg';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlayCircle} from '@fortawesome/free-solid-svg-icons';
+
 
 function TaalVolcano() {
   return (
@@ -27,6 +33,22 @@ function TaalVolcano() {
         <h2>Trip Route from Manila</h2>
         <p>To visit Taal Volcano from Manila, the easiest and most affordable way is by bus. You can find several bus terminals in Manila; just ask around for the nearest one. The bus journey to Tagaytay takes about 2 to 2.5 hours. Once in Tagaytay, you'll need to catch a tuk-tuk for a 20-minute ride to Talisay Bay, which faces Taal Lake. From there, you’ll take a 30-minute boat trip across Taal Lake on a small boat to reach Volcano Island, where Taal Volcano is located.</p>
       </div>
+
+      <a href="https://www.youtube.com/watch?v=nQRU8wxBaoI" target="_blank"><h2 class="youtube-link">DRONE VIEW OF TAAL VOLCANO</h2></a>
+      <ReactPlayer 
+      url={TaalVideo}
+      controls={true} 
+      light={TaalThumbnail}
+      playing={true}
+      playIcon={<FontAwesomeIcon icon={faPlayCircle} size="4x" style={{ color: 'white' }}/>}
+      height="450px" 
+      width="100%"/>
+
+
+
+
+
+
     </div>
   )
 }

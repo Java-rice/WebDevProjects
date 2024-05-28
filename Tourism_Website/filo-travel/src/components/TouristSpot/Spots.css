@@ -75,6 +75,11 @@ h3{
 .fade-in {
     opacity: 1;
 }
+
+.italicNote{
+    text-align: left;
+    padding-bottom: 10%;
+}
   
 
 @media screen and (max-width:769px){

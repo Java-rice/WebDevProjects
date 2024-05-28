@@ -1,6 +1,12 @@
 import React from "react";
 import "./ContentStyle.css";
 import BoracayImg from "../../assets/boracay_img.png";
+import BoracayVideo from '../../assets/videos/Boracay.mp4'
+import ReactPlayer from 'react-player';
+import borathumbnail from '../../assets/bora_thumbnail.jpg';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlayCircle} from '@fortawesome/free-solid-svg-icons';
+
 
 function Boracay() {
   return (
@@ -84,6 +90,15 @@ function Boracay() {
           your chosen route.
         </p>
       </div>
+      <a href="https://www.youtube.com/watch?v=b7LSsKsJGHY&t=40s" target="_blank"><h2 class="youtube-link">Boracay Island Philippines: The Best Island in the World</h2></a>
+      <ReactPlayer 
+      url={BoracayVideo}
+      controls={true} 
+      light={borathumbnail}
+      playing={true}
+      playIcon={<FontAwesomeIcon icon={faPlayCircle} size="4x" style={{ color: 'white' }}/>}
+      height="450px" 
+      width="100%"/>
     </div>
   );
 }
