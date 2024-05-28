@@ -36,8 +36,14 @@ const App = () => {
             </TransitionWrapper>
           }
         />
-        <Route path="/introduction" element={<Introduction />} />
-        <Route path="/destination" element={<Destination />} />
+        <Route
+          path="/introduction"
+          element={
+            <TransitionWrapper>
+              <Introduction />
+            </TransitionWrapper>
+          }
+        />
       </Routes>
     </Router>
   );
