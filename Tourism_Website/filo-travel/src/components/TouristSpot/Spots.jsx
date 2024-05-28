@@ -91,6 +91,7 @@ function SpotsNav() {
           blend of culture, history, and natural beauty.
         </p>
         {renderContent()}
+        <p className="italicNote"><i>Note: We do not own the video. Click on the name of the video to view the original YouTube video and the page of its creator. This is for educational purposes only.</i></p>
       </div>
     </div>
   );

@@ -1,6 +1,11 @@
 import React from 'react'
 import './ContentStyle.css'
 import BanaueImg from '../../assets/banaue_img.png'
+import BanaueVideo from '../../assets/videos/Banaue Rice_Terraces_Banaue.mp4'
+import ReactPlayer from 'react-player';
+import BanaueThumbnail from '../../assets/banaueThumbnail.jpg';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlayCircle} from '@fortawesome/free-solid-svg-icons';
 
 function BanaueRiceTerraces() {
   return (
@@ -25,6 +30,15 @@ function BanaueRiceTerraces() {
         <h2>Trip Route from Manila</h2>
         <p>To travel from Manila to the Banaue Rice Terraces, you can take a night bus, which offers both standard and premium options with ample legroom for a comfortable journey lasting approximately 10-11 hours. It is advisable to bring items that ensure comfort throughout the trip. Once in Banaue, you can explore must-visit sites like the Banaue Rice Terraces, Batad Rice Terraces, and Bangaan Village, each offering a unique cultural and natural experience.</p>
       </div>
+      <a href="https://www.youtube.com/watch?v=AccU5KfNJ4Q" target="_blank"><h2 class="youtube-link">Banaue Rice Terraces | Banaue, Ifugao Province | Cinematic video | 4K</h2></a>
+      <ReactPlayer 
+      url={BanaueVideo}
+      controls={true} 
+      light={BanaueThumbnail}
+      playing={true}
+      playIcon={<FontAwesomeIcon icon={faPlayCircle} size="4x" style={{ color: 'white' }}/>}
+      height="450px" 
+      width="100%"/>
     </div>
   )
 }

@@ -82,6 +82,7 @@ To set up the Filo Travel Website locally, follow these steps:
         npm install react-transition-group
         npm install react-router-dom
         npm install react-slick slick-carousel
+        npm install --save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-svg-core
         ```
 
 3. **Import Font Awesome and Google Fonts:**
