@@ -17,7 +17,7 @@ const Carousel = () => {
     centerMode: true,
     centerPadding: "10px",
     beforeChange: (current, next) =>
-      setActiveSlide(images[next % images.length]),
+      setActiveSlide(images[(next + 1) % images.length]),
   };
 
   const images = [
