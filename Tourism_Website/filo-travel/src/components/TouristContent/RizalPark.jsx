@@ -1,6 +1,7 @@
 import React from 'react'
 import './ContentStyle.css'
 import RizalParkImg from '../../assets/rizal_park_img.png'
+import RizalParkVideo from '../../assets/videos/rizal_park_video.mp4'
 
 function RizalPark() {
   return (
@@ -20,8 +21,10 @@ function RizalPark() {
         <p>A trip from Manila can start with a visit to Rizal Park, which is centrally located in the heart of the city. From there, it's just a short walk to Intramuros, the historic walled city. Public transportation, including buses, jeepneys, and trains, is very accessible, making it easy to explore these significant landmarks.</p>
       </div>
 
-      <h2>WATCH | BEST SCENERIES OF RIZAL PARK | LUNETA | DJI OSMO POCKET</h2>
-      <img alt='video here'></img>
+      <a href="https://www.youtube.com/watch?v=miA5hZPMAK4" target="_blank"><h2 class="youtube-link">WATCH | BEST SCENERIES OF RIZAL PARK | LUNETA | DJI OSMO POCKET</h2></a>
+      <video controls>
+        <source src={RizalParkVideo} type="video/mp4"></source>
+      </video>
     </div>
   )
 }
