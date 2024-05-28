@@ -1,14 +1,46 @@
+/* src/components/Carousel.css */
 .carousel-container {
-    width: 60%;
-    margin: 0 auto;
-    flex-grow: 1;
-  }
-  
-  .carousel-image {
-    width: 100%;
-    height: 500px;
-    padding: 15px;
-    border-radius: 40px;
-    flex-shrink: 0;
-  }
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align items to the bottom */
+}
+
+.carousel-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* Cover the full height */
+  z-index: 1; /* Background should be under the slider */
+}
+
+.carousel-background img {
+  object-fit: cover;
+}
+
+.carousel-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Ensure this content is in front of the background */
+}
+
+.carousel-slider {
+  width: 100%;
+  height: auto;
+}
+
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 40px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
   
