@@ -5,6 +5,7 @@ import Home from './components/Pages/Home/Home'
 import Destination from './components/Pages/Destination/Destination'
 import About from './components/Pages/About/About'
 
+
 const App = () => {
   return (
     <Router>
