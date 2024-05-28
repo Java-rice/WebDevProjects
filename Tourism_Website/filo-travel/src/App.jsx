@@ -1,22 +1,43 @@
-import React from 'react'
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar'
-import Home from './components/Pages/Home/Home'
-import Destination from './components/Pages/Destination/Destination'
-import About from './components/Pages/About/About'
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/Pages/Home/Home';
+import Destination from './components/Pages/Destination/Destination';
+import About from './components/Pages/About/About';
+import TransitionWrapper from './components/TransitionWrapper';
 
 const App = () => {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/destination" element={<Destination />} />
-        <Route path="/about" element={<About />} />
+        <Route
+          path="/"
+          element={
+            <TransitionWrapper>
+              <Home />
+            </TransitionWrapper>
+          }
+        />
+        <Route
+          path="/destination"
+          element={
+            <TransitionWrapper>
+              <Destination />
+            </TransitionWrapper>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <TransitionWrapper>
+              <About />
+            </TransitionWrapper>
+          }
+        />
       </Routes>
     </Router>
   );
 };
 
-export default App
-
+export default App;
