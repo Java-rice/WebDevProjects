@@ -1,27 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Introduction.css";
 import Carousel from "./Carousel/Carousel";
 import CarouselContent from "./Carousel/CarouselContent";
 
-const slideContent = {
-  title: "Island Adventures Await",
-  subtitle: "Uncover the Secrets of Pristine Beaches",
-  content:
-    "Imagine yourself basking under the golden sun, with crystal-clear waters and powdery white sands beneath your feet. The Philippines is home to some of the world's most beautiful beaches, each offering a unique slice of paradise. Whether you’re looking for a quiet retreat or a lively beach party, you’ll find the perfect spot here.",
-};
-
 const Introduction = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const navigate = useNavigate();
+
+  const handleExploreNow = () => {
+    navigate("/destination");
+  };
+
   return (
     <div className="introduction container">
       <div className="introduction-content">
-        <Carousel />
+        <Carousel setActiveSlide={setActiveSlide} />
         <div className="introduction-content-right">
-          <CarouselContent
-            title={slideContent.title}
-            subtitle={slideContent.subtitle}
-            content={slideContent.content}
-          />
-          <button type="button">Explore Now</button>
+          <CarouselContent activeSlide={activeSlide} />
+          <button type="button" onClick={handleExploreNow}>
+            Explore Now
+          </button>
         </div>
       </div>
     </div>
