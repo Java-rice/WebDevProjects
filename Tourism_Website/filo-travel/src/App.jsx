@@ -1,10 +1,10 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar'
-import Home from './components/Pages/Home/Home'
-import Destination from './components/Pages/Destination/Destination'
-import About from './components/Pages/About/About'
-
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Pages/Home/Home";
+import Destination from "./components/Pages/Destination/Destination";
+import About from "./components/Pages/About/About";
+import Introduction from "./components/Pages/Home/Introduction";
 
 const App = () => {
   return (
@@ -15,9 +15,12 @@ const App = () => {
         <Route path="/destination" element={<Destination />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      <Routes>
+        <Route path="/" element={<Introduction />} />
+        <Route path="/destination" element={<Destination />} />
+      </Routes>
     </Router>
   );
 };
 
-export default App
-
+export default App;
