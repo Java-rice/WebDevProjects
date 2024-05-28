@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bottom-footer-container">
+      <div className="bottom-footer-container container">
         <div className="bottom-footer-content">
           <h1>Filo Travel</h1>
           <p>
