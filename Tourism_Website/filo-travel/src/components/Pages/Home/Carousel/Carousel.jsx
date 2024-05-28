@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import "./Carousel.css";
-import boracay_img from "../../../../assets/boracay_img.png";
-import destination_bg from "../../../../assets/destination_bg.png";
+import slide1 from "../../../../assets/slide1.png";
+import slide2 from "../../../../assets/slide2.png";
+import slide3 from "../../../../assets/slide3.png";
+import slide4 from "../../../../assets/slide4.png";
+import slide5 from "../../../../assets/slide5.png";
 
 const Carousel = () => {
-  const [activeSlide, setActiveSlide] = useState(boracay_img);
+  const [activeSlide, setActiveSlide] = useState(slide2);
 
   const settings = {
     infinite: true,
@@ -20,13 +23,7 @@ const Carousel = () => {
       setActiveSlide(images[(next + 1) % images.length]),
   };
 
-  const images = [
-    boracay_img,
-    boracay_img,
-    destination_bg,
-    boracay_img,
-    boracay_img,
-  ];
+  const images = [slide1, slide2, slide3, slide4, slide5];
 
   return (
     <div className="carousel-container">
