@@ -10,12 +10,16 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: #f8f8f8;
+    transition: 0.3s ease-in-out;
+}
+
+#spottext{
+    text-align: center;
 }
 
 h3{
     color: #00A0B1;
 }
-
 
 .spot-items, .spot-items li a {
     color: #363636;
@@ -67,4 +71,25 @@ h3{
 
 .spotcontent.fade-out {
     opacity: 0;
+}
+
+@media screen and (max-width:769px){
+    .spotcontainer {
+        flex-direction: column;
+        justify-content: space-between;
+        transition: 0.3s ease-in-out;
+    }
+    .spotnavcontainer {
+        width: 100%;
+        bottom: 100px;
+        padding: 2% 2%;
+        line-height: 1.6;
+        position: inherit;
+        text-align: center;
+        height: auto;
+        margin-bottom: 30px;
+    }
+    .spotcontent {
+        width: 100%;
+    }
 }
