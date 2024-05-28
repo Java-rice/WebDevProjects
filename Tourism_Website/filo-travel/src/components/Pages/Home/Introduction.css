@@ -15,8 +15,8 @@
   }
   
   .introduction-content-right {
-    width: 30%;
-    padding: 50px;
+    width: 40%;
+    padding: 50px 0 50px 50px;
   }
 
   .introduction-content-right h1 {
@@ -64,4 +64,19 @@
     background: #00A0B1;
     border: none;
     margin: 20px;
+  }
+
+  @media screen and (max-width:1350px){
+    .introduction-content-right {
+      width: 100%;
+      padding: 50px;
+    }
+    .introduction-content-left {
+      width: 100%;
+      padding: 50px;
+    }
+  
+    .introduction-content {
+      flex-direction: column;
+    }
   }
