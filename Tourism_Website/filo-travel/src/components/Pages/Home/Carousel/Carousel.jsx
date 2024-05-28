@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "./Carousel.css";
 import boracay_img from "../../../../assets/boracay_img.png";
 import destination_bg from "../../../../assets/destination_bg.png";
 
 const Carousel = () => {
+  const [activeSlide, setActiveSlide] = useState(boracay_img);
+
   const settings = {
     infinite: true,
     speed: 500,
@@ -12,86 +14,41 @@ const Carousel = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    centerMode: true,
+    centerPadding: "10px",
+    beforeChange: (current, next) =>
+      setActiveSlide(images[next % images.length]),
   };
+
+  const images = [
+    boracay_img,
+    boracay_img,
+    destination_bg,
+    boracay_img,
+    boracay_img,
+  ];
 
   return (
     <div className="carousel-container">
       <div className="carousel-background">
         <img
-          src={destination_bg}
+          src={activeSlide}
           alt="Destination Background"
           className="carousel-image"
         />
-        <div className="carousel-slider">
-          <Slider {...settings}>
-            <div>
+      </div>
+      <div className="carousel-slider">
+        <Slider {...settings}>
+          {images.map((img, index) => (
+            <div key={index}>
               <img
-                src={boracay_img}
-                alt="White Beach, Boracay"
+                src={img}
+                alt={`Slide ${index + 1}`}
                 className="carousel-image"
               />
             </div>
-            <div>
-              <img
-                src={destination_bg}
-                alt="Chocolate Hills, Bohol"
-                className="carousel-image"
-              />
-            </div>
-            <div>
-              <img
-                src={boracay_img}
-                alt="Puerto Princesa Underground River, Palawan"
-                className="carousel-image"
-              />
-            </div>
-            <div>
-              <img
-                src={boracay_img}
-                alt="Cloud 9, Siargao"
-                className="carousel-image"
-              />
-            </div>
-            <div>
-              <img
-                src={boracay_img}
-                alt="Cebu Beaches and Diving Spots"
-                className="carousel-image"
-              />
-            </div>
-            <div>
-              <img
-                src={boracay_img}
-                alt="Banaue Rice Terraces, Ifugao"
-                className="carousel-image"
-              />
-            </div>
-            <div>
-              <img
-                src={boracay_img}
-                alt="Rizal Park, Manila"
-                className="carousel-image"
-              />
-            </div>
-            <div>
-              <img
-                src={boracay_img}
-                alt="Kayangan Lake"
-                className="carousel-image"
-              />
-            </div>
-            <div>
-              <img
-                src={boracay_img}
-                alt="Taal Volcano, Batangas"
-                className="carousel-image"
-              />
-            </div>
-            <div>
-              <img src={boracay_img} alt="Slide 3" className="carousel-image" />
-            </div>
-          </Slider>
-        </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );
