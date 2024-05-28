@@ -7,8 +7,8 @@ import slide3 from "../../../../assets/slide3.png";
 import slide4 from "../../../../assets/slide4.png";
 import slide5 from "../../../../assets/slide5.png";
 
-const Carousel = () => {
-  const [activeSlide, setActiveSlide] = useState(slide2);
+const Carousel = ({ setActiveSlide }) => {
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
   const settings = {
     infinite: true,
@@ -19,8 +19,10 @@ const Carousel = () => {
     autoplaySpeed: 3000,
     centerMode: true,
     centerPadding: "10px",
-    beforeChange: (current, next) =>
-      setActiveSlide(images[(next + 1) % images.length]),
+    beforeChange: (current, next) => {
+      setActiveSlide(next);
+      setActiveSlideIndex(next);
+    },
   };
 
   const images = [slide1, slide2, slide3, slide4, slide5];
@@ -29,7 +31,7 @@ const Carousel = () => {
     <div className="carousel-container">
       <div className="carousel-background">
         <img
-          src={activeSlide}
+          src={images[activeSlideIndex]}
           alt="Destination Background"
           className="carousel-image"
         />
