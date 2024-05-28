@@ -79,7 +79,7 @@ function SpotsNav() {
         </ul>
       </div>
       <div className={`spotcontent ${isFading ? 'fade-out' : ''}`}>
-        <p>Are you a traveler looking for a new adventure? Do you want to explore destinations that are off the beaten path and not overcrowded with tourists? Look no further than these top 10 emerging destinations. These hidden gems are waiting to be explored, and they offer a unique blend of culture, history, and natural beauty.</p>
+        <p id='spottext'>Are you a traveler looking for a new adventure? Do you want to explore destinations that are off the beaten path and not overcrowded with tourists? Look no further than these top 10 emerging destinations. These hidden gems are waiting to be explored, and they offer a unique blend of culture, history, and natural beauty.</p>
         {renderContent()}
       </div>
     </div>
