@@ -12,6 +12,10 @@
     color: #00A0B1;
 }
 
+.content-change .youtube-link{
+    text-decoration: underline;
+}
+
 .content-change h1{
     font-size: 1.8rem;
 }

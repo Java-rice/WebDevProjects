@@ -1,6 +1,11 @@
 import React from 'react'
 import './ContentStyle.css'
 import SiargaoImg from '../../assets/siargao_img.png'
+import SiargaoVideo from '../../assets/videos/siargao_video.mp4'
+import ReactPlayer from 'react-player';
+import SiargaoThumbnail from '../../assets/siargao_thumbnail.png';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlayCircle} from '@fortawesome/free-solid-svg-icons';
 
 function Siargao() {
   return (
@@ -23,8 +28,15 @@ function Siargao() {
         <p>Getting to Siargao is relatively easy and can be done in a day. From Manila, you can take a direct flight to Sayak Airport in Siargao, which takes approximately 1 hour and 15 minutes. Alternatively, you can fly to Cebu or Cagayan de Oro and then take a connecting flight or ferry to Siargao.</p>
       </div>
 
-      <h2>WATCH | Siargao Island Philippines: More than just Surfing!</h2>
-      <img alt='video here'></img>
+      <a href="https://www.youtube.com/watch?v=l6K6FgR2xB8" target="_blank"><h2 class="youtube-link">WATCH | Siargao Island Philippines: More than just Surfing!</h2></a>
+      <ReactPlayer 
+      url={SiargaoVideo}
+      controls={true} 
+      light={SiargaoThumbnail}
+      playing={true}
+      playIcon={<FontAwesomeIcon icon={faPlayCircle} size="4x" style={{ color: 'white' }}/>}
+      height="450px" 
+      width="100%"/>
     </div>
   )
 }
