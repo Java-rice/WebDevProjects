@@ -12,14 +12,17 @@ const Footer = () => {
         <img src={footer_bg} alt="Footer background" className="footer-bg" />
         <div className="top-footer-content">
           <h1>Subcribe and be Update</h1>
-          <input
-            type="email"
-            placeholder="Please enter your email address to get latest updates and offers"
-            className="footer-email-input"
-          />
+          <div className="subscribe">
+            <input
+              type="email"
+              placeholder="Please enter your email address to get latest updates and offers"
+              className="footer-email-input"
+            />
+            <button type="button" className="footer-subscribe-button">Subscribe</button>
+          </div>
         </div>
       </div>
-      <div className="bottom-footer-container">
+      <div className="bottom-footer-container container">
         <div className="bottom-footer-content">
           <h1>Filo Travel</h1>
           <p>

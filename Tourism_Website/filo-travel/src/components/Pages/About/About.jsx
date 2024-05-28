@@ -1,8 +1,9 @@
 import React from "react";
 import backgroundImage from "../../../assets/about_bg.png";
 import Hero from "../../Hero/Hero";
-import "./About.css";
+import MissionSection from "../../../components/MissionSection/MissionSection";
 import Footer from "../../../components/Footer/Footer";
+import "./About.css";
 
 const About = () => {
   const heroContent = {
@@ -19,9 +20,8 @@ const About = () => {
         content={heroContent.content}
         backgroundImage={heroContent.backgroundImage}
       />
-      <div>
-        <Footer />
-      </div>
+      <MissionSection />
+      <Footer />
     </>
   );
 };

@@ -1,0 +1,36 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-background {
+  position: relative;
+  width: auto;
+  height: auto;
+  z-index: 1;
+}
+
+.carousel-slider {
+  position: absolute; 
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 24%;
+  z-index: 2; 
+}
+
+.carousel-slider img {
+  padding: 10px;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 40px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+

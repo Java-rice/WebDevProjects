@@ -3,6 +3,7 @@ import Hero from "../../Hero/Hero";
 import "./Home.css";
 import backgroundImage from "../../../assets/home_bg.png";
 import Footer from "../../../components/Footer/Footer";
+import Introduction from "./Introduction";
 
 const Home = () => {
   const heroContent = {
@@ -19,10 +20,8 @@ const Home = () => {
         content={heroContent.content}
         backgroundImage={heroContent.backgroundImage}
       />
-      <div className="introduction container"></div>
-      <div>
-        <Footer />
-      </div>
+      <Introduction />
+      <Footer />
     </>
   );
 };
