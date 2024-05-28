@@ -6,7 +6,6 @@ import destination_bg from "../../../../assets/destination_bg.png";
 
 const Carousel = () => {
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 5,
