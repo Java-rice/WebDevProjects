@@ -45,6 +45,7 @@
     font-size: 1rem;
     padding: 30px;
     border: none;
+    cursor:text;
   }
 
   .subscribe{
@@ -64,6 +65,13 @@
     font-size: 1rem;
     font-family: 'Montserrat',sans-serif;
     background-color: #00A0B1;
+  }
+
+  .footer-subscribe-button:hover{
+    font-size: 1.2rem;
+    width:26%;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
   }
 
   .bottom-footer-container {
@@ -102,6 +110,13 @@
     height: 30px;
     flex-shrink: 0;
     margin-right: 10px
+  }
+
+  .social-icon:hover {
+    width: 35px;
+    height: 35px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
   }
 
   @media screen and (max-width:1560px){
