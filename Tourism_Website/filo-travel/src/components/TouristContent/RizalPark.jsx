@@ -2,6 +2,10 @@ import React from 'react'
 import './ContentStyle.css'
 import RizalParkImg from '../../assets/rizal_park_img.png'
 import RizalParkVideo from '../../assets/videos/rizal_park_video.mp4'
+import ReactPlayer from 'react-player';
+import RizalParkThumbnail from '../../assets/rizal_park_thumbnail.png';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlayCircle} from '@fortawesome/free-solid-svg-icons';
 
 function RizalPark() {
   return (
@@ -22,9 +26,14 @@ function RizalPark() {
       </div>
 
       <a href="https://www.youtube.com/watch?v=miA5hZPMAK4" target="_blank"><h2 class="youtube-link">WATCH | BEST SCENERIES OF RIZAL PARK | LUNETA | DJI OSMO POCKET</h2></a>
-      <video controls>
-        <source src={RizalParkVideo} type="video/mp4"></source>
-      </video>
+      <ReactPlayer 
+      url={RizalParkVideo}
+      controls={true} 
+      light={RizalParkThumbnail}
+      playing={true}
+      playIcon={<FontAwesomeIcon icon={faPlayCircle} size="4x" style={{ color: 'white' }}/>}
+      height="450px" 
+      width="100%"/>
     </div>
   )
 }

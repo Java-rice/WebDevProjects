@@ -2,6 +2,10 @@ import React from 'react'
 import './ContentStyle.css'
 import KayanganLakeImg from '../../assets/kayangan_lake_img.png'
 import KayanganLakeVideo from '../../assets/videos/kayangan_lake_video.mp4'
+import ReactPlayer from 'react-player';
+import KayanganLakeThumbnail from '../../assets/kayangan_lake_thumbnail.png';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlayCircle} from '@fortawesome/free-solid-svg-icons';
 
 function KayanganLake() {
   return (
@@ -22,9 +26,14 @@ function KayanganLake() {
       </div>
 
       <a href="https://www.youtube.com/watch?v=stYbS5ATMg0" target="_blank"><h2 class="youtube-link">WATCH | Kayangan Lake || Coron Palawan || Relaxing Drone 4k Video</h2></a>
-      <video controls>
-        <source src={KayanganLakeVideo} type="video/mp4"></source>
-      </video>
+      <ReactPlayer 
+      url={KayanganLakeVideo}
+      controls={true} 
+      light={KayanganLakeThumbnail}
+      playing={true}
+      playIcon={<FontAwesomeIcon icon={faPlayCircle} size="4x" style={{ color: 'white' }}/>}
+      height="450px" 
+      width="100%"/>
     </div>
   )
 }

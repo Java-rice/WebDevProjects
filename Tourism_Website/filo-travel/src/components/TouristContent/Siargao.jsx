@@ -2,6 +2,10 @@ import React from 'react'
 import './ContentStyle.css'
 import SiargaoImg from '../../assets/siargao_img.png'
 import SiargaoVideo from '../../assets/videos/siargao_video.mp4'
+import ReactPlayer from 'react-player';
+import SiargaoThumbnail from '../../assets/siargao_thumbnail.png';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlayCircle} from '@fortawesome/free-solid-svg-icons';
 
 function Siargao() {
   return (
@@ -25,9 +29,14 @@ function Siargao() {
       </div>
 
       <a href="https://www.youtube.com/watch?v=l6K6FgR2xB8" target="_blank"><h2 class="youtube-link">WATCH | Siargao Island Philippines: More than just Surfing!</h2></a>
-      <video controls>
-        <source src={SiargaoVideo} type="video/mp4"></source>
-      </video>
+      <ReactPlayer 
+      url={SiargaoVideo}
+      controls={true} 
+      light={SiargaoThumbnail}
+      playing={true}
+      playIcon={<FontAwesomeIcon icon={faPlayCircle} size="4x" style={{ color: 'white' }}/>}
+      height="450px" 
+      width="100%"/>
     </div>
   )
 }

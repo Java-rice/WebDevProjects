@@ -2,6 +2,10 @@ import React from 'react'
 import './ContentStyle.css'
 import CebuImg from '../../assets/cebu_img.png'
 import CebuVideo from '../../assets/videos/cebu_video.mp4'
+import ReactPlayer from 'react-player';
+import CebuThumbnail from '../../assets/cebu_thumbnail.png';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlayCircle} from '@fortawesome/free-solid-svg-icons';
 
 function Cebu() {
   return (
@@ -31,9 +35,14 @@ function Cebu() {
       </div>
 
       <a href="https://www.youtube.com/watch?v=4jzph6P38l8" target="_blank"><h2 class="youtube-link">WATCH | CEBU Island Philippines: Tours Like Never Before!</h2></a>
-      <video controls light>
-        <source src={CebuVideo} type="video/mp4"></source>
-      </video>
+      <ReactPlayer 
+      url={CebuVideo}
+      controls={true} 
+      light={CebuThumbnail}
+      playing={true}
+      playIcon={<FontAwesomeIcon icon={faPlayCircle} size="4x" style={{ color: 'white' }}/>}
+      height="450px" 
+      width="100%"/>
     </div>
   )
 }
