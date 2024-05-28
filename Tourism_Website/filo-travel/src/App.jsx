@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Pages/Home/Home";
 import Destination from "./components/Pages/Destination/Destination";
 import About from "./components/Pages/About/About";
+import TransitionWrapper from "./components/TransitionWrapper";
 import Introduction from "./components/Pages/Home/Introduction";
 
 const App = () => {
@@ -11,9 +12,30 @@ const App = () => {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/destination" element={<Destination />} />
-        <Route path="/about" element={<About />} />
+        <Route
+          path="/"
+          element={
+            <TransitionWrapper>
+              <Home />
+            </TransitionWrapper>
+          }
+        />
+        <Route
+          path="/destination"
+          element={
+            <TransitionWrapper>
+              <Destination />
+            </TransitionWrapper>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <TransitionWrapper>
+              <About />
+            </TransitionWrapper>
+          }
+        />
       </Routes>
       <Routes>
         <Route path="/" element={<Introduction />} />
