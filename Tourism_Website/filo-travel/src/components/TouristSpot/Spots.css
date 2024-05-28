@@ -40,7 +40,6 @@ h3{
 
 .spotcontent {
     width: 70%;
-    transition: opacity 0.5s ease;
     opacity: 1;
 }
 
@@ -68,10 +67,15 @@ h3{
     visibility: visible;
     width: 100%;
 }
-
-.spotcontent.fade-out {
+  
+.fade-out {
     opacity: 0;
 }
+  
+.fade-in {
+    opacity: 1;
+}
+  
 
 @media screen and (max-width:769px){
     .spotcontainer {
