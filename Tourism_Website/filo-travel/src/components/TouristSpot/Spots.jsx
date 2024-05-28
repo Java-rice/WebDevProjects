@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Spots.css';
 import Boracay from '../TouristContent/Boracay';
 import BanaueRiceTerraces from '../TouristContent/BanaueRiceTerraces';
@@ -29,38 +28,39 @@ function SpotsNav() {
     'Mayon Volcano'
   ];
 
-  const handleSpotChange = (spot) => {
+  const handleSpotChange = (spot, event) => {
+    event.preventDefault();
     setIsFading(true);
+    setSelectedSpot(spot);
     setTimeout(() => {
-      setSelectedSpot(spot);
       setIsFading(false);
-    }, 400);
+    }, 200);
   };
 
   const renderContent = () => {
     switch (selectedSpot) {
       case 'Boracay':
-        return  <Boracay />;
+        return <Boracay />;
       case 'Chocolate Hills':
-        return <ChocolateHills/>
+        return <ChocolateHills />;
       case 'Puerto Princesa':
-        return <PuertoPrincesa/>
+        return <PuertoPrincesa />;
       case 'Siargao':
-        return <Siargao/>
+        return <Siargao />;
       case 'Cebu':
-        return <Cebu/>
+        return <Cebu />;
       case 'Banaue Rice Terraces':
-        return <BanaueRiceTerraces/>
+        return <BanaueRiceTerraces />;
       case 'Rizal Park':
-        return <RizalPark/>
+        return <RizalPark />;
       case 'Kayangan Lake':
-        return <KayanganLake/>
+        return <KayanganLake />;
       case 'Taal Volcano':
-        return <TaalVolcano/>
+        return <TaalVolcano />;
       case 'Mayon Volcano':
-        return <MayonVolcano/>
+        return <MayonVolcano />;
       default:
-        return <Boracay/>
+        return <Boracay />;
     }
   };
 
@@ -71,15 +71,25 @@ function SpotsNav() {
         <ul className='spot-items'>
           {spots.map((spot) => (
             <li key={spot}>
-              <Link to="#" onClick={() => handleSpotChange(spot)} className={selectedSpot === spot ? 'active' : ''}>
+              <a
+                href="#"
+                onClick={(event) => handleSpotChange(spot, event)}
+                className={selectedSpot === spot ? 'active' : ''}
+              >
                 {spot}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
       </div>
-      <div className={`spotcontent ${isFading ? 'fade-out' : ''}`}>
-        <p id='spottext'>Are you a traveler looking for a new adventure? Do you want to explore destinations that are off the beaten path and not overcrowded with tourists? Look no further than these top 10 emerging destinations. These hidden gems are waiting to be explored, and they offer a unique blend of culture, history, and natural beauty.</p>
+      <div className={`spotcontent ${isFading ? 'fade-out' : 'fade-in'}`}>
+        <p id='spottext'>
+          Are you a traveler looking for a new adventure? Do you want to explore
+          destinations that are off the beaten path and not overcrowded with
+          tourists? Look no further than these top 10 emerging destinations.
+          These hidden gems are waiting to be explored, and they offer a unique
+          blend of culture, history, and natural beauty.
+        </p>
         {renderContent()}
       </div>
     </div>
