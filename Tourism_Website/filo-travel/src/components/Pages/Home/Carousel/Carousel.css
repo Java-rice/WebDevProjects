@@ -3,7 +3,6 @@
   margin: auto;
   width: 700px;
   height: 480px;
-  
   display: flex;
   flex-direction: column;
 }
@@ -39,4 +38,11 @@
   height: 100%;
   object-fit: cover;
   border-radius: 40px;
+}
+
+@media screen and (max-width:769px){
+  .carousel-container {
+    width: 100%;
+    height: auto;
+  }
 }
