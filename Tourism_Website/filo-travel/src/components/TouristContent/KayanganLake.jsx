@@ -1,6 +1,11 @@
 import React from 'react'
 import './ContentStyle.css'
 import KayanganLakeImg from '../../assets/kayangan_lake_img.png'
+import KayanganLakeVideo from '../../assets/videos/kayangan_lake_video.mp4'
+import ReactPlayer from 'react-player';
+import KayanganLakeThumbnail from '../../assets/kayangan_lake_thumbnail.png';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlayCircle} from '@fortawesome/free-solid-svg-icons';
 
 function KayanganLake() {
   return (
@@ -20,8 +25,15 @@ function KayanganLake() {
         <p>To reach Kayangan Lake, you'll first need to travel to Coron Island, which is accessible from Manila via a direct flight or a combination of flights and ferry rides. Once in Coron, you can join organized island-hopping tours or arrange private transportation to the lake. The journey may be a bit adventurous, but the reward of witnessing Kayangan Lake's breathtaking beauty makes it all worthwhile.</p>
       </div>
 
-      <h2>WATCH | Kayangan Lake || Coron Palawan || Relaxing Drone 4k Video</h2>
-      <img alt='video here'></img>
+      <a href="https://www.youtube.com/watch?v=stYbS5ATMg0" target="_blank"><h2 class="youtube-link">WATCH | Kayangan Lake || Coron Palawan || Relaxing Drone 4k Video</h2></a>
+      <ReactPlayer 
+      url={KayanganLakeVideo}
+      controls={true} 
+      light={KayanganLakeThumbnail}
+      playing={true}
+      playIcon={<FontAwesomeIcon icon={faPlayCircle} size="4x" style={{ color: 'white' }}/>}
+      height="450px" 
+      width="100%"/>
     </div>
   )
 }

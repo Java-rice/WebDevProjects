@@ -1,6 +1,12 @@
 import React from 'react'
 import './ContentStyle.css'
 import MayonImg from '../../assets/mayon_img.png'
+import MayonVideo from '../../assets/videos/mayon_video.mp4'
+import ReactPlayer from 'react-player';
+import MayonThumbnail from '../../assets/mayon_thumbnail.png';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlayCircle} from '@fortawesome/free-solid-svg-icons';
+
 function MayonVolcano() {
   return (
     <div class='content-change'>
@@ -22,8 +28,15 @@ function MayonVolcano() {
         <p>Reaching Mayon Volcano from Manila is relatively straightforward. You can take a direct flight to Legazpi City, the capital of Albay, which takes approximately one hour. Alternatively, you can travel by land via a scenic drive or a combination of bus and van rides, which will take around 8-10 hours. Once in Albay, you can arrange guided tours or transportation to explore the various viewpoints and hiking trails around the volcano.</p>
       </div>
 
-      <h2>WATCH | Mount Mayon Volcano, Philippines - Stock Videos 4K Ultra HD</h2>
-      <img alt='video here'></img>
+      <a href="https://www.youtube.com/watch?v=DBFmCgFuBCk" target="_blank"><h2 class="youtube-link">WATCH | Mount Mayon Volcano, Philippines - Stock Videos 4K Ultra HD</h2></a>
+      <ReactPlayer 
+      url={MayonVideo}
+      controls={true} 
+      light={MayonThumbnail}
+      playing={true}
+      playIcon={<FontAwesomeIcon icon={faPlayCircle} size="4x" style={{ color: 'white' }}/>}
+      height="450px" 
+      width="100%"/>
     </div>
   )
 }
