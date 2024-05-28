@@ -36,9 +36,7 @@ const App = () => {
             </TransitionWrapper>
           }
         />
-      </Routes>
-      <Routes>
-        <Route path="/" element={<Introduction />} />
+        <Route path="/introduction" element={<Introduction />} />
         <Route path="/destination" element={<Destination />} />
       </Routes>
     </Router>
