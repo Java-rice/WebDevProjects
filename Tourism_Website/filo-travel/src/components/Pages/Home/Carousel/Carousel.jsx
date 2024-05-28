@@ -82,11 +82,7 @@ const Carousel = () => {
           />
         </div>
         <div>
-          <img
-            src={boracay_img}
-            alt="Mayon Volcano"
-            className="carousel-image"
-          />
+          <img src={boracay_img} alt="Slide 3" className="carousel-image" />
         </div>
       </Slider>
     </div>
