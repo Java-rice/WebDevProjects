@@ -1,5 +1,4 @@
-
-  .introduction {
+.introduction {
     width: 100%;
     min-height: 50vh;
     display: flex;
@@ -14,13 +13,10 @@
     display: flex;
     align-items: center;
   }
-
-  .introduction-content-left {
-    flex-grow: 1;
-  }
   
   .introduction-content-right {
     width: 30%;
+    padding: 50px;
   }
 
   .introduction-content-right h1 {
@@ -30,17 +26,17 @@
     font-style: normal;
     font-weight: 600;
     line-height: 32px;
-    margin: 10px;
+    margin: 20px;
   }
 
   .introduction-content-right h2 {
-    color: var(--for-font, #363636);
+    color: var(#363636);
     font-family: Montserrat;
-    font-size: 67px;
+    font-size: 58px;
     font-style: normal;
     font-weight: 600;
     line-height: 72px;
-    margin: 10px;
+    margin: 20px;
   }
 
   .introduction-content-right p {
@@ -51,18 +47,21 @@
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    margin: 10px;
+    margin: 20px;
   }
 
   button {
     color: #FFF;
     font-family: Montserrat;
-    font-size: 1rem;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
     width: 143px;
     height: 52px;
     flex-shrink: 0;
     border-radius: 15px;
     background: #00A0B1;
     border: none;
-    margin: 10px;
+    margin: 20px;
   }
