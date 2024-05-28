@@ -1,11 +1,12 @@
 import React from "react";
 import "./Introduction.css";
+import Carousel from "./Carousel/Carousel";
 
 const Introduction = () => {
   return (
     <div className="introduction container">
       <div className="introduction-content">
-        <div className="introduction-content-left"> asdsad</div>
+        <Carousel />
         <div className="introduction-content-right">
           <h1>Introduction</h1>
           <h2>Welcome to Paradise</h2>
@@ -17,6 +18,7 @@ const Introduction = () => {
             offers a perfect blend of everything you dream of in a travel
             destination.
           </p>
+          <button type="button">Explore Now</button>
         </div>
       </div>
     </div>
