@@ -120,3 +120,8 @@ Contributing
 We welcome contributions from the community. To contribute, please fork the repository and create a pull request with your changes. Ensure your code adheres to our coding standards and includes proper documentation.
 
 Thank you for being part of the Filo Travel community! Happy travels!
+
+Challenges
+-We need to learn how to declare and use new components, which involves researching and understanding each one.
+-The framework offers numerous libraries, making it challenging to select the most suitable one for our needs.
+-As beginners in this framework, we sometimes overlook necessary code that isn’t typically used outside of this framework.
