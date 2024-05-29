@@ -1,6 +1,13 @@
 import React from 'react'
 import './ContentStyle.css'
 import ChocolateHillsImg from '../../assets/chocolate_hills_img.png'
+import ChocolateVideo from '../../assets/videos/Chocolate_Hills.mp4'
+import ReactPlayer from 'react-player';
+import ChocolateThumbnail from '../../assets/chocolate_hills.jpg';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlayCircle} from '@fortawesome/free-solid-svg-icons';
+
+
 
 function ChocolateHills() {
   return (
@@ -25,6 +32,15 @@ function ChocolateHills() {
         <h2>Trip Route from Manila</h2>
         <p>To get from Manila to the Chocolate Hills in Bohol, you have several options. You can fly from Manila to Tagbilaran Airport in Bohol and then take a taxi, Grab, or public transport to the hills near Dauis. Alternatively, driving from Manila to Bohol takes about 2.5 hours and lets you explore at your own pace. You can also take a bus to Dauis and then a tricycle to the Chocolate Hills. Another option is to catch a ferry from Cebu to Tagbilaran, a popular route for those visiting Bohol. Each method offers a convenient way to reach the destination based on your preferences.</p>
       </div>
+      <a href="https://www.youtube.com/watch?v=y6sVFrv2qvQ" target="_blank"><h2 class="youtube-link">Explore Chocolate Hills - Bohol by Drone</h2></a>
+      <ReactPlayer 
+      url={ChocolateVideo}
+      controls={true} 
+      light={ChocolateThumbnail}
+      playing={true}
+      playIcon={<FontAwesomeIcon icon={faPlayCircle} size="4x" style={{ color: 'white' }}/>}
+      height="450px" 
+      width="100%"/>
     </div>
   )
 }

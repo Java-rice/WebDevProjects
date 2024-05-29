@@ -7,7 +7,7 @@ import "./About.css";
 
 const About = () => {
   const heroContent = {
-    title: "Who we are?",
+    title: "Who we are",
     content:
       "Welcome to Filo Travel! We are a passionate group dedicated to showcasing the beauty and cultural richness of the Philippines. Our goal is to inspire locals and international travelers to discover the hidden gems and iconic landmarks of our archipelago.",
     backgroundImage: backgroundImage,

@@ -14,7 +14,7 @@ const Introduction = () => {
   };
 
   return (
-    <div className="introduction container">
+    <div className="introduction">
       <div className="introduction-content">
         <Carousel setActiveSlide={setActiveSlide} />
         <div className="introduction-content-right">
